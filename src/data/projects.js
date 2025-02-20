@@ -1,6 +1,12 @@
 const projects = [
     {
         id: 1,
+        title: "Driling Monitoring",
+        description: "Monitoring Laporan Drilling PT Gayo Mineral Resources",
+        image: "gayo.PNG"
+    },
+    {
+        id: 1,
         title: "Job Management",
         description: "Monitoring Laporan Pekerjaan PT. Antam dan Logam Mulia",
         image: "Slide6.PNG"
