@@ -7,7 +7,7 @@ const About = () => {
         <h2 className="text-4xl font-bold mb-8 text-gray-800">Tentang Saya</h2>
         <div className="flex flex-col items-center mb-12">
           <img 
-            src={`https://monitoring.pptik.id/data/project/profile.png`}
+            src={`/profile/profile.jpg`}
             alt="Profile" 
             className="w-32 h-32 rounded-full object-cover mb-4 shadow-lg" 
           />

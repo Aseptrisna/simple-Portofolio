@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <section 
       className="bg-cover bg-center h-screen text-white" 
-      style={{ backgroundImage: 'url(https://monitoring.pptik.id/data/project/bg.jpg)' }}
+      style={{ backgroundImage: 'url(/bg/bg.jpg)' }}
     >
       <div className="bg-black bg-opacity-60 h-full flex flex-col justify-center items-center text-center p-6">
         <h2 className="text-5xl font-bold mb-4">Halo, Saya Asep Trisna Setiawan</h2>
