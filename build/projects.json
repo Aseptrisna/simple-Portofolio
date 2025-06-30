@@ -1,0 +1,92 @@
+[
+  {
+    "imageUrl": "images/angkot-bandung.jpg",
+    "title": "Angkot Bandung: Pantau Posisi Angkot",
+    "description": "Aplikasi web untuk memantau posisi angkot di Kota Bandung secara real-time berdasarkan pilihan trayek, untuk memudahkan perencanaan perjalanan."
+  },
+  {
+    "imageUrl": "images/gayo.png",
+    "title": "Drilling Monitoring",
+    "description": "Monitoring Laporan Drilling untuk PT. Gayo Mineral Resources."
+  },
+  {
+    "imageUrl": "images/job-management.png",
+    "title": "Job Management",
+    "description": "Monitoring Laporan Pekerjaan untuk PT. Antam dan Logam Mulia."
+  },
+  {
+    "imageUrl": "images/iot-monitoring.png",
+    "title": "IoT Monitoring",
+    "description": "Monitoring Mesin Produksi untuk PT. Antam ubpp Logam Mulia."
+  },
+  {
+    "imageUrl": "images/ambulance-bandung.jpg",
+    "title": "Ambulans Kota Bandung: Sistem Pemantauan Posisi",
+    "description": "Aplikasi berbasis web untuk memantau dan melacak posisi semua unit ambulans di Kota Bandung secara live pada peta, guna mempercepat waktu respons dalam kondisi darurat."
+  },
+  {
+    "imageUrl": "images/apotek.png",
+    "title": "Inventory Apotek",
+    "description": "Sistem Informasi Pencatatan dan Penjualan Obat untuk Apotek."
+  },
+  {
+    "imageUrl": "images/haji.png",
+    "title": "Manasik Tracking",
+    "description": "Sistem Informasi Tracking Jamaah Haji untuk PT. LSKK."
+  },
+  {
+    "imageUrl": "images/georima.png",
+    "title": "GeoRIMA 1.5",
+    "description": "Visualisasi Data Sumber Daya Alam untuk PPSDM."
+  },
+  {
+    "imageUrl": "images/kawal-desa.png",
+    "title": "Kawal Desa",
+    "description": "Aplikasi/platform yang dipergunakan untuk kebutuhan tatakelola di desa maupun interaksi antara warga dan aparat desa."
+  },
+  {
+    "imageUrl": "images/ai-camera.jpg",
+    "title": "Deteksi Kendaraan dengan Kamera AI",
+    "description": "Platform cerdas yang memanfaatkan model AI (YOLOv8) untuk mendeteksi dan menganalisis objek kendaraan secara real-time dari rekaman kamera. Sistem ini mampu memberikan laporan detil, termasuk tingkat kepercayaan deteksi dan koordinat objek, untuk meningkatkan keamanan dan efisiensi pemantauan area."
+  },
+  {
+    "imageUrl": "images/face-recognition-dashboard.jpg",
+    "title": "Dashboard Training & Uji Coba Model Pengenalan Wajah",
+    "description": "Membangun aplikasi web interaktif untuk melatih dan menguji model AI dalam melakukan pengenalan wajah secara real-time langsung dari kamera"
+  },
+  {
+    "imageUrl": "images/ai-hylab.jpg",
+    "title": " HYLAB: Smart Classroom AI Monitoring",
+    "description": "Sebuah dasbor pemantauan terpusat yang menggunakan AI untuk menganalisis aktivitas, jumlah, dan kondisi emosional siswa (seperti lelah atau sedih) di dalam kelas secara real-time dari berbagai sudut kamera"
+  },
+  {
+    "imageUrl": "images/face-detection.jpg",
+    "title": "Visi Komputer untuk Deteksi Manusia dan Emosi",
+    "description": "Mengembangkan sistem AI canggih yang tidak hanya mampu mendeteksi keberadaan orang dalam suatu area, tetapi juga dapat menganalisis dan mengenali ekspresi emosi mereka secara real-time."
+  },
+  {
+    "imageUrl": "images/ops-engine.png",
+    "title": "Platform Monitoring & Pelaporan Mesin Industri",
+    "description": "Mengembangkan Ops Engine, sebuah solusi manajemen operasional lengkap yang terdiri dari dasbor web untuk pemantauan menyeluruh dan aplikasi mobile untuk teknisi di lapangan. Sistem ini memungkinkan pelacakan status mesin, manajemen tugas, dan pelaporan inspeksi secara digital untuk meningkatkan efisiensi dan mengurangi waktu henti (downtime) mesin."
+  },
+  {
+    "imageUrl": "images/status-iot.jpg",
+    "title": "Dasbor Status Perangkat IoT",
+    "description": "Mengembangkan dasbor berbasis web untuk memantau status dan lokasi perangkat IoT yang tersebar di seluruh Indonesia secara real-time melalui visualisasi peta interaktif."
+  },
+  {
+    "imageUrl": "images/bell-iot.png",
+    "title": "Sistem Notifikasi Bel & Monitoring CCTV",
+    "description": "Mengintegrasikan bel pintu dengan kamera CCTV yang secara otomatis mengirimkan notifikasi dan tangkapan gambar ke perangkat mobile dan web saat ada pengunjung."
+  },
+  {
+    "imageUrl": "images/gps-tracker.jpg",
+    "title": "Platform Monitoring Armada Kendaraan",
+    "description": "Aplikasi web untuk melacak dan memvisualisasikan lokasi kendaraan secara real-time pada peta interaktif, lengkap dengan informasi detail seperti kecepatan dan waktu"
+  },
+  {
+    "imageUrl": "images/ai-traffic-monitoring.jpg",
+    "title": "Pemantauan Lalu Lintas dengan AI",
+    "description": "Membangun sistem pemantauan lalu lintas yang menggunakan AI untuk mendeteksi dan menganalisis kondisi lalu lintas secara real-time dari rekaman kamera."
+  }
+]
