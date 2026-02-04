@@ -1101,8 +1101,102 @@
             // Set current year in footer
             document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-            // --- Function to load projects from JSON file ---
-            async function loadProjects() {
+            // --- Projects Data (Embedded) ---
+            const projectsData = [
+                {
+                    "imageUrl": "images/angkot-bandung.jpg",
+                    "title": "Angkot Bandung: Pantau Posisi Angkot",
+                    "description": "Aplikasi web untuk memantau posisi angkot di Kota Bandung secara real-time berdasarkan pilihan trayek, untuk memudahkan perencanaan perjalanan."
+                },
+                {
+                    "imageUrl": "images/gayo.png",
+                    "title": "Drilling Monitoring",
+                    "description": "Monitoring Laporan Drilling untuk PT. Gayo Mineral Resources."
+                },
+                {
+                    "imageUrl": "images/job-management.png",
+                    "title": "Job Management",
+                    "description": "Monitoring Laporan Pekerjaan untuk PT. Antam dan Logam Mulia."
+                },
+                {
+                    "imageUrl": "images/iot-monitoring.png",
+                    "title": "IoT Monitoring",
+                    "description": "Monitoring Mesin Produksi untuk PT. Antam ubpp Logam Mulia."
+                },
+                {
+                    "imageUrl": "images/ambulance-bandung.jpg",
+                    "title": "Ambulans Kota Bandung: Sistem Pemantauan Posisi",
+                    "description": "Aplikasi berbasis web untuk memantau dan melacak posisi semua unit ambulans di Kota Bandung secara live pada peta, guna mempercepat waktu respons dalam kondisi darurat."
+                },
+                {
+                    "imageUrl": "images/apotek.png",
+                    "title": "Inventory Apotek",
+                    "description": "Sistem Informasi Pencatatan dan Penjualan Obat untuk Apotek."
+                },
+                {
+                    "imageUrl": "images/haji.png",
+                    "title": "Manasik Tracking",
+                    "description": "Sistem Informasi Tracking Jamaah Haji untuk PT. LSKK."
+                },
+                {
+                    "imageUrl": "images/georima.png",
+                    "title": "GeoRIMA 1.5",
+                    "description": "Visualisasi Data Sumber Daya Alam untuk PPSDM."
+                },
+                {
+                    "imageUrl": "images/kawal-desa.png",
+                    "title": "Kawal Desa",
+                    "description": "Aplikasi/platform yang dipergunakan untuk kebutuhan tatakelola di desa maupun interaksi antara warga dan aparat desa."
+                },
+                {
+                    "imageUrl": "images/ai-camera.jpg",
+                    "title": "Deteksi Kendaraan dengan Kamera AI",
+                    "description": "Platform cerdas yang memanfaatkan model AI (YOLOv8) untuk mendeteksi dan menganalisis objek kendaraan secara real-time dari rekaman kamera. Sistem ini mampu memberikan laporan detil, termasuk tingkat kepercayaan deteksi dan koordinat objek, untuk meningkatkan keamanan dan efisiensi pemantauan area."
+                },
+                {
+                    "imageUrl": "images/face-recognition-dashboard.jpg",
+                    "title": "Dashboard Training & Uji Coba Model Pengenalan Wajah",
+                    "description": "Membangun aplikasi web interaktif untuk melatih dan menguji model AI dalam melakukan pengenalan wajah secara real-time langsung dari kamera"
+                },
+                {
+                    "imageUrl": "images/ai-hylab.jpg",
+                    "title": "HYLAB: Smart Classroom AI Monitoring",
+                    "description": "Sebuah dasbor pemantauan terpusat yang menggunakan AI untuk menganalisis aktivitas, jumlah, dan kondisi emosional siswa (seperti lelah atau sedih) di dalam kelas secara real-time dari berbagai sudut kamera"
+                },
+                {
+                    "imageUrl": "images/face-detection.jpg",
+                    "title": "Visi Komputer untuk Deteksi Manusia dan Emosi",
+                    "description": "Mengembangkan sistem AI canggih yang tidak hanya mampu mendeteksi keberadaan orang dalam suatu area, tetapi juga dapat menganalisis dan mengenali ekspresi emosi mereka secara real-time."
+                },
+                {
+                    "imageUrl": "images/ops-engine.png",
+                    "title": "Platform Monitoring & Pelaporan Mesin Industri",
+                    "description": "Mengembangkan Ops Engine, sebuah solusi manajemen operasional lengkap yang terdiri dari dasbor web untuk pemantauan menyeluruh dan aplikasi mobile untuk teknisi di lapangan. Sistem ini memungkinkan pelacakan status mesin, manajemen tugas, dan pelaporan inspeksi secara digital untuk meningkatkan efisiensi dan mengurangi waktu henti (downtime) mesin."
+                },
+                {
+                    "imageUrl": "images/status-iot.jpg",
+                    "title": "Dasbor Status Perangkat IoT",
+                    "description": "Mengembangkan dasbor berbasis web untuk memantau status dan lokasi perangkat IoT yang tersebar di seluruh Indonesia secara real-time melalui visualisasi peta interaktif."
+                },
+                {
+                    "imageUrl": "images/bell-iot.png",
+                    "title": "Sistem Notifikasi Bel & Monitoring CCTV",
+                    "description": "Mengintegrasikan bel pintu dengan kamera CCTV yang secara otomatis mengirimkan notifikasi dan tangkapan gambar ke perangkat mobile dan web saat ada pengunjung."
+                },
+                {
+                    "imageUrl": "images/gps-tracker.jpg",
+                    "title": "Platform Monitoring Armada Kendaraan",
+                    "description": "Aplikasi web untuk melacak dan memvisualisasikan lokasi kendaraan secara real-time pada peta interaktif, lengkap dengan informasi detail seperti kecepatan dan waktu"
+                },
+                {
+                    "imageUrl": "images/ai-traffic-monitoring.jpg",
+                    "title": "Pemantauan Lalu Lintas dengan AI",
+                    "description": "Membangun sistem pemantauan lalu lintas yang menggunakan AI untuk mendeteksi dan menganalisis kondisi lalu lintas secara real-time dari rekaman kamera."
+                }
+            ];
+
+            // --- Function to load and render projects ---
+            function loadProjects() {
                 const projectsGrid = document.getElementById('projects-grid');
                 // Show modern skeleton loaders
                 projectsGrid.innerHTML = Array(6).fill('').map(() => `
@@ -1120,46 +1214,45 @@
                     </div>
                 `).join('');
 
-                try {
-                    const response = await fetch('projects.json');
-                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-                    
-                    const projects = await response.json();
-                    projectsGrid.innerHTML = ''; // Clear skeletons
+                // Simulate loading delay for smooth UX
+                setTimeout(() => {
+                    try {
+                        projectsGrid.innerHTML = ''; // Clear skeletons
 
-                    projects.forEach(project => {
-                        const card = document.createElement('div');
-                        card.className = 'project-card reveal';
-                        
-                        const tagsHtml = (project.tags || []).map(tag => 
-                            `<span class="tech-badge">${tag}</span>`
-                        ).join('');
+                        projectsData.forEach(project => {
+                            const card = document.createElement('div');
+                            card.className = 'project-card reveal';
+                            
+                            const tagsHtml = (project.tags || []).map(tag => 
+                                `<span class="tech-badge">${tag}</span>`
+                            ).join('');
 
-                        const linksHtml = `
-                            <div class="mt-auto pt-4 flex items-center gap-3">
-                                ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 transition-colors font-medium flex items-center gap-1.5 text-sm"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
-                                ${project.sourceUrl ? `<a href="${project.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 transition-colors font-medium flex items-center gap-1.5 text-sm"><i class="fab fa-github"></i> Source</a>` : ''}
-                            </div>
-                        `;
+                            const linksHtml = `
+                                <div class="mt-auto pt-4 flex items-center gap-3">
+                                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 transition-colors font-medium flex items-center gap-1.5 text-sm"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
+                                    ${project.sourceUrl ? `<a href="${project.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 transition-colors font-medium flex items-center gap-1.5 text-sm"><i class="fab fa-github"></i> Source</a>` : ''}
+                                </div>
+                            `;
 
-                        card.innerHTML = `
-                            <div class="relative overflow-hidden">
-                                <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-56 object-cover transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/667eea/ffffff?text=Project+Image';">
-                            </div>
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">${project.title}</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow leading-relaxed">${project.description}</p>
-                                ${tagsHtml ? `<div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>` : ''}
-                                ${linksHtml}
-                            </div>
-                        `;
-                        projectsGrid.appendChild(card);
-                    });
-                    revealOnScroll();
-                } catch (error) {
-                    console.error("Gagal memuat data proyek:", error);
-                    projectsGrid.innerHTML = '<div class="col-span-full text-center py-12"><div class="inline-block bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl px-8 py-6"><i class="fas fa-exclamation-circle text-red-500 text-3xl mb-3"></i><p class="text-red-600 dark:text-red-400 font-medium">Gagal memuat data proyek.</p><p class="text-red-500 dark:text-red-500 text-sm mt-2">Pastikan file projects.json ada dan formatnya benar.</p></div></div>';
-                }
+                            card.innerHTML = `
+                                <div class="relative overflow-hidden">
+                                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-56 object-cover transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/667eea/ffffff?text=Project+Image';">
+                                </div>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">${project.title}</h3>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow leading-relaxed">${project.description}</p>
+                                    ${tagsHtml ? `<div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>` : ''}
+                                    ${linksHtml}
+                                </div>
+                            `;
+                            projectsGrid.appendChild(card);
+                        });
+                        revealOnScroll();
+                    } catch (error) {
+                        console.error("Gagal memuat data proyek:", error);
+                        projectsGrid.innerHTML = '<div class="col-span-full text-center py-12"><div class="inline-block bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl px-8 py-6"><i class="fas fa-exclamation-circle text-red-500 text-3xl mb-3"></i><p class="text-red-600 dark:text-red-400 font-medium">Gagal memuat data proyek.</p></div></div>';
+                    }
+                }, 800);
             }
 
             loadProjects();
