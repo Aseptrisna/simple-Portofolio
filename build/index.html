@@ -51,31 +51,51 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
-        /* --- Custom CSS & Theme Variables --- */
+        /* --- Modern Design System & Theme Variables --- */
         :root {
-            --bg-light: #f1f5f9;      /* slate-100 */
-            --bg-dark: #0f172a;       /* slate-900 */
-            --card-light: #ffffff;     /* white */
-            --card-dark: #1e293b;      /* slate-800 */
-            --text-light: #0f172a;     /* slate-900 */
-            --text-dark: #e2e8f0;      /* slate-200 */
-            --text-muted-light: #475569; /* slate-600 */
-            --text-muted-dark: #94a3b8;  /* slate-400 */
-            --border-light: #e2e8f0;   /* slate-200 */
-            --border-dark: #334155;    /* slate-700 */
-            --primary-color: #3b82f6;   /* blue-500 */
-            --primary-hover: #2563eb;   /* blue-600 */
+            --bg-light: #fafafa;
+            --bg-dark: #0a0a0a;
+            --bg-secondary-light: #f5f5f5;
+            --bg-secondary-dark: #111111;
+            --card-light: #ffffff;
+            --card-dark: #1a1a1a;
+            --text-light: #0a0a0a;
+            --text-dark: #fafafa;
+            --text-muted-light: #525252;
+            --text-muted-dark: #a3a3a3;
+            --border-light: #e5e5e5;
+            --border-dark: #262626;
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --primary-light: #60a5fa;
+            --accent-color: #06b6d4;
+            --accent-hover: #0891b2;
+            --success-color: #10b981;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
         }
 
         /* --- Base Styles --- */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
         html {
             scroll-behavior: smooth;
         }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg-light);
             color: var(--text-light);
-            transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
 
         /* --- Dark Mode Styles --- */
@@ -84,18 +104,61 @@
             color: var(--text-dark);
         }
         .dark .bg-white { background-color: var(--card-dark) !important; }
-        .dark .bg-slate-50 { background-color: var(--bg-dark) !important; }
-        .dark .bg-slate-100 { background-color: var(--bg-dark) !important; }
-        .dark .text-gray-800 { color: var(--text-dark) !important; }
-        .dark .text-gray-600 { color: var(--text-muted-dark) !important; }
+        .dark .bg-slate-50,
+        .dark .bg-slate-100,
+        .dark .bg-gray-50 { background-color: var(--bg-secondary-dark) !important; }
+        .dark .text-gray-800,
+        .dark .text-gray-900 { color: var(--text-dark) !important; }
+        .dark .text-gray-600,
         .dark .text-gray-700 { color: var(--text-muted-dark) !important; }
-        .dark .border-blue-200 { border-color: #2563eb55 !important; }
-        .dark .border-l-4 { border-color: var(--primary-hover) !important; }
-        .dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2); }
-        .dark .bg-gray-100 { background-color: var(--border-dark) !important; }
-        .dark #navbar { background-color: rgba(15, 23, 42, 0.8); }
-        .dark .project-card { border: 1px solid var(--border-dark); }
-        .dark .timeline-dot { border-color: var(--card-dark); }
+        .dark .border-gray-200,
+        .dark .border-slate-200 { border-color: var(--border-dark) !important; }
+        .dark .shadow-lg,
+        .dark .shadow-xl,
+        .dark .shadow-2xl {
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+        }
+        .dark #navbar { 
+            background-color: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(16px);
+        }
+        .dark .glass-card {
+            background: rgba(26, 26, 26, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Glassmorphism Effects --- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* --- Modern Card Styles --- */
+        .modern-card {
+            background: var(--card-light);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-light);
+        }
+        .dark .modern-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+        .modern-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-2xl);
+        }
 
         /* --- Preloader --- */
         #preloader {
@@ -104,7 +167,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: var(--bg-light);
+            background: var(--bg-light);
             z-index: 9999;
             display: flex;
             justify-content: center;
@@ -112,36 +175,54 @@
             transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
         }
         .dark #preloader {
-            background-color: var(--bg-dark);
+            background: var(--bg-dark);
         }
         .loader {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-left-color: var(--primary-color);
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(59, 130, 246, 0.1);
+            border-top-color: var(--primary-color);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
         }
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
 
-        /* --- Animations & Transitions --- */
+        /* --- Enhanced Animations --- */
         .reveal {
             position: relative;
-            transform: translateY(100px);
+            transform: translateY(60px);
             opacity: 0;
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
-            transform: translateY(0px);
+            transform: translateY(0);
             opacity: 1;
         }
-        
-        /* --- Component Styling --- */
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        }
+
+        /* --- Hero Section Styles --- */
         #hero {
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .dark #hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 100%);
         }
         #particles-js {
             position: absolute;
@@ -150,81 +231,321 @@
             top: 0;
             left: 0;
             z-index: 1;
-            background-color: #0f172a;
         }
         .hero-content {
             position: relative;
             z-index: 2;
         }
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+        .hero-subtitle {
+            font-size: clamp(1.125rem, 3vw, 1.5rem);
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+        /* --- Button Styles --- */
         .btn {
-            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.4);
         }
         .btn-primary:hover {
-            box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.5);
-            transform: translateY(-3px);
+            box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.6);
+            transform: translateY(-3px) scale(1.05);
         }
         .btn-secondary {
-            background-color: transparent;
-            border: 1px solid var(--border-light);
-        }
-        .dark .btn-secondary {
-             border-color: var(--border-dark);
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            backdrop-filter: blur(10px);
         }
         .btn-secondary:hover {
-            background-color: rgba(71, 85, 105, 0.1);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
         }
-        .dark .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
         }
 
-        #scrollTopBtn {
-            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+        /* --- Section Title Styles --- */
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
         }
-        #scrollTopBtn:hover {
-            transform: scale(1.1);
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted-light);
+            max-width: 600px;
+            margin: 0 auto 3rem;
         }
+        .dark .section-subtitle {
+            color: var(--text-muted-dark);
+        }
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            margin: 1.5rem auto 3rem;
+            border-radius: 2px;
+        }
+
+        /* --- Timeline Styles --- */
         .timeline-dot {
             position: absolute;
             left: -2.35rem;
             top: 0.3rem;
+            transition: all 0.3s ease;
         }
-        .skill-card:hover .skill-icon {
-            transform: scale(1.1) rotate(5deg);
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.2);
+        }
+
+        /* --- Skill Card Styles --- */
+        .skill-card {
+            background: var(--card-light);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+        }
+        .dark .skill-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+        .skill-card:hover {
+            transform: translateY(-8px) rotate(2deg);
+            box-shadow: var(--shadow-xl);
         }
         .skill-icon {
-            transition: transform 0.3s ease-in-out;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
-        .section-title {
-            background: -webkit-linear-gradient(45deg, var(--primary-color), #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .skill-card:hover .skill-icon {
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        /* --- Stats Card --- */
+        .stats-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            color: white;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+        }
+        .stats-card:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-2xl);
+        }
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .stats-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        /* --- Project Card Styles --- */
+        .project-card {
+            background: var(--card-light);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid var(--border-light);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .dark .project-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-2xl);
+        }
+        .project-card img {
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+        .tech-badge {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .dark .tech-badge {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        /* --- Scroll to Top Button --- */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+        }
+        #scrollTopBtn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        /* --- Contact Section --- */
+        .contact-card {
+            background: var(--card-light);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .dark .contact-card {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* --- Form Styles --- */
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            background: var(--card-light);
+            color: var(--text-light);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .dark .form-input {
+            background: var(--card-dark);
+            border-color: var(--border-dark);
+            color: var(--text-dark);
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        /* --- Responsive Utilities --- */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .stats-number {
+                font-size: 2rem;
+            }
         }
 
         /* Skeleton Loader for Projects */
         .skeleton-card {
             background-color: var(--card-light);
-            border-radius: 0.5rem;
+            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            box-shadow: var(--shadow-md);
         }
         .dark .skeleton-card {
             background-color: var(--card-dark);
         }
         .skeleton-img {
             height: 14rem;
-            background-color: #e2e8f0;
+            background-color: #e5e5e5;
         }
         .dark .skeleton-img {
-            background-color: #334155;
+            background-color: #262626;
         }
         .skeleton-text {
             height: 1.25rem;
             margin-bottom: 0.75rem;
             border-radius: 0.25rem;
-            background-color: #e2e8f0;
+            background-color: #e5e5e5;
         }
         .dark .skeleton-text {
-            background-color: #334155;
+            background-color: #262626;
         }
         @keyframes pulse {
             50% {
@@ -236,7 +557,7 @@
         }
     </style>
 </head>
-<body class="bg-slate-100">
+<body class="bg-slate-50 dark:bg-gray-900">
 
     <!-- Preloader -->
     <div id="preloader">
@@ -244,101 +565,200 @@
     </div>
 
     <!-- Header & Navbar -->
-    <header id="navbar" class="bg-slate-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-white tracking-wider">A. Trisna Setiawan</a>
-            <div class="flex items-center">
-                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                    <a href="#about" class="text-gray-300 hover:text-blue-400 transition duration-300">Tentang</a>
-                    <a href="#skills" class="text-gray-300 hover:text-blue-400 transition duration-300">Keahlian</a>
-                    <a href="#projects" class="text-gray-300 hover:text-blue-400 transition duration-300">Proyek</a>
-                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105">Hubungi Saya</a>
+    <header id="navbar" class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                Asep Trisna S.
+            </a>
+            <div class="flex items-center gap-2">
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg transition-all font-medium">Tentang</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg transition-all font-medium">Keahlian</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg transition-all font-medium">Proyek</a>
+                    <a href="#contact" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-md">
+                        Hubungi
+                    </a>
                 </nav>
                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="ml-4 lg:ml-6 text-gray-300 hover:text-blue-400 transition duration-300 focus:outline-none">
-                    <i class="fas fa-sun" id="theme-toggle-light-icon"></i>
-                    <i class="fas fa-moon hidden" id="theme-toggle-dark-icon"></i>
+                <button id="theme-toggle" class="ml-2 lg:ml-4 p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all focus:outline-none rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <i class="fas fa-sun text-xl" id="theme-toggle-light-icon"></i>
+                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-dark-icon"></i>
                 </button>
-                <button id="mobile-menu-button" class="md:hidden ml-4 text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button id="mobile-menu-button" class="md:hidden ml-2 p-2 text-gray-700 dark:text-white focus:outline-none rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900/95">
-            <a href="#about" class="block text-gray-300 hover:text-blue-400 transition duration-300 px-6 py-3">Tentang</a>
-            <a href="#skills" class="block text-gray-300 hover:text-blue-400 transition duration-300 px-6 py-3">Keahlian</a>
-            <a href="#projects" class="block text-gray-300 hover:text-blue-400 transition duration-300 px-6 py-3">Proyek</a>
-            <a href="#contact" class="block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 mx-4 my-2 rounded-lg transition duration-300 text-center">Hubungi Saya</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+            <a href="#about" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all px-6 py-3 font-medium">Tentang</a>
+            <a href="#skills" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all px-6 py-3 font-medium">Keahlian</a>
+            <a href="#projects" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all px-6 py-3 font-medium">Proyek</a>
+            <a href="#contact" class="block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 mx-4 my-3 rounded-full text-center shadow-md">Hubungi Saya</a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="opacity-0">
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center">
+        <section id="hero" class="min-h-screen flex items-center py-20">
             <div id="particles-js"></div>
             <div class="container mx-auto px-4 sm:px-6 text-white text-center hero-content">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 reveal">Halo, saya Asep Trisna Setiawan</h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 reveal">Saya seorang <span class="text-blue-400 font-semibold">Software Engineer</span> yang bersemangat dalam menciptakan solusi teknologi inovatif.</p>
-                <a href="#projects" class="btn btn-primary bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full text-lg transition duration-300 ease-in-out transform reveal">
-                    Lihat Karya Saya
-                </a>
+                <div class="mb-6 reveal">
+                    <span class="inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 text-sm font-medium">
+                        👋 Selamat datang di portfolio saya
+                    </span>
+                </div>
+                <h1 class="hero-title reveal">
+                    Asep Trisna Setiawan
+                </h1>
+                <p class="hero-subtitle max-w-3xl mx-auto mb-12 reveal">
+                    Saya seorang <span class="font-bold text-cyan-300">Software Engineer</span> yang passionate dalam menciptakan solusi teknologi inovatif. 
+                    Spesialisasi dalam <span class="font-semibold">Web Development</span>, <span class="font-semibold">Mobile Apps</span>, dan <span class="font-semibold">IoT</span>.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center items-center reveal">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Lihat Karya Saya
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Hubungi Saya
+                    </a>
+                </div>
+                <!-- Social Media Links -->
+                <div class="flex gap-6 justify-center mt-12 reveal">
+                    <a href="https://github.com/Aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20 md:py-24 bg-white">
+        <section id="about" class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl font-bold text-gray-800">Tentang Saya</h2>
-                    <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto mt-4 rounded"></div>
+                <div class="text-center mb-20 reveal">
+                    <h2 class="section-title">Tentang Saya</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Mengenal lebih dekat profil dan pengalaman saya</p>
                 </div>
-                <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-                    <div class="lg:w-1/3 text-center reveal">
-                        <img src="profile/DSC08102.jpg" alt="Foto Profil Asep Trisna Setiawan" class="w-56 h-56 sm:w-64 sm:h-64 rounded-full mx-auto object-cover shadow-2xl border-4 border-blue-200" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e0e7ff/3730a3?text=Asep+T.S.';">
+
+                <!-- Profile & Stats -->
+                <div class="grid lg:grid-cols-3 gap-8 mb-20">
+                    <!-- Profile Image -->
+                    <div class="lg:col-span-1 reveal">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl transform rotate-6"></div>
+                            <img src="profile/DSC08102.jpg" alt="Foto Profil Asep Trisna Setiawan" class="relative w-full aspect-square rounded-3xl object-cover shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/400x400/667eea/ffffff?text=Asep+T.S.';">
+                        </div>
                     </div>
-                    <div class="lg:w-2/3 text-center lg:text-left reveal">
-                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                            Saya adalah seorang software engineer yang memiliki keahlian dalam berbagai teknologi termasuk <strong>IoT, pengembangan backend, pengembangan web,</strong> dan <strong>aplikasi mobile</strong>. Dengan hasrat untuk memecahkan masalah yang kompleks, saya berdedikasi untuk terus belajar dan memanfaatkan keterampilan saya untuk mendorong inovasi dan membangun aplikasi yang andal serta bermanfaat bagi pengguna.
-                        </p>
-                        <a href="resume/CV-Asep-Trisna-Setiawan.pdf" download class="btn btn-primary inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-5 rounded-lg">
-                            <i class="fas fa-download"></i>
-                            Unduh CV
-                        </a>
-                    </div>
-                </div>
-                <!-- Education & Experience Section -->
-                <div class="mt-20 grid md:grid-cols-2 gap-12 md:gap-16 text-gray-800">
-                    <!-- Pendidikan -->
-                    <div class="reveal">
-                        <h3 class="text-3xl font-bold mb-8 flex items-center gap-4"><i class="fas fa-graduation-cap text-blue-500"></i>Pendidikan</h3>
-                        <div class="border-l-2 border-blue-500 pl-12 space-y-10 relative">
-                            <div class="relative">
-                                <div class="timeline-dot w-4 h-4 bg-blue-500 rounded-full border-4 border-white"></div>
-                                <p class="font-bold text-xl">Magister Teknik Elektro</p>
-                                <p class="text-gray-600">Institut Teknologi Bandung (ITB)</p>
+
+                    <!-- Bio & Stats -->
+                    <div class="lg:col-span-2 space-y-8">
+                        <div class="reveal">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Software Engineer & Educator</h3>
+                            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                                Saya adalah seorang software engineer yang memiliki keahlian dalam berbagai teknologi termasuk <strong class="text-blue-600">IoT</strong>, <strong class="text-blue-600">pengembangan backend</strong>, <strong class="text-blue-600">pengembangan web</strong>, dan <strong class="text-blue-600">aplikasi mobile</strong>. 
+                            </p>
+                            <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                                Dengan hasrat untuk memecahkan masalah yang kompleks, saya berdedikasi untuk terus belajar dan memanfaatkan keterampilan saya untuk mendorong inovasi dan membangun aplikasi yang andal serta bermanfaat bagi pengguna.
+                            </p>
+                            <a href="resume/CV-Asep-Trisna-Setiawan.pdf" download class="btn btn-outline">
+                                <i class="fas fa-download"></i>
+                                Unduh CV Saya
+                            </a>
+                        </div>
+
+                        <!-- Stats Cards -->
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal">
+                            <div class="stats-card">
+                                <div class="stats-number">5+</div>
+                                <div class="stats-label">Tahun Pengalaman</div>
                             </div>
-                            <div class="relative">
-                               <div class="timeline-dot w-4 h-4 bg-blue-500 rounded-full border-4 border-white"></div>
-                                <p class="font-bold text-xl">Sarjana Sistem Informasi</p>
-                                <p class="text-gray-600">Universitas Bandar Lampung (UBL)</p>
+                            <div class="stats-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <div class="stats-number">50+</div>
+                                <div class="stats-label">Proyek Selesai</div>
+                            </div>
+                            <div class="stats-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <div class="stats-number">100%</div>
+                                <div class="stats-label">Client Puas</div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Education & Experience Timeline -->
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
+                    <!-- Pendidikan -->
+                    <div class="reveal">
+                        <div class="flex items-center gap-4 mb-10">
+                            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-800">Pendidikan</h3>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="modern-card timeline-item">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="font-bold text-xl text-gray-800">Magister Teknik Elektro</p>
+                                        <p class="text-gray-600 font-medium">Institut Teknologi Bandung (ITB)</p>
+                                        <p class="text-gray-500 text-sm mt-1">Spesialisasi: Teknologi Informasi</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modern-card timeline-item">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="font-bold text-xl text-gray-800">Sarjana Sistem Informasi</p>
+                                        <p class="text-gray-600 font-medium">Universitas Bandar Lampung (UBL)</p>
+                                        <p class="text-gray-500 text-sm mt-1">IPK: 3.8/4.0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Pengalaman Kerja -->
                     <div class="reveal">
-                        <h3 class="text-3xl font-bold mb-8 flex items-center gap-4"><i class="fas fa-briefcase text-blue-500"></i>Pekerjaan</h3>
-                        <div class="border-l-2 border-blue-500 pl-12 space-y-10 relative">
-                            <div class="relative">
-                                <div class="timeline-dot w-4 h-4 bg-blue-500 rounded-full border-4 border-white"></div>
-                                <p class="font-bold text-xl">Lead Software Developer</p>
-                                <p class="text-gray-600">PT. LSKK</p>
+                        <div class="flex items-center gap-4 mb-10">
+                            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-briefcase"></i>
                             </div>
-                            <div class="relative">
-                                <div class="timeline-dot w-4 h-4 bg-blue-500 rounded-full border-4 border-white"></div>
-                                <p class="font-bold text-xl">Dosen Fakultas Ilmu Komputer</p>
-                                <p class="text-gray-600">Universitas Bandar Lampung</p>
+                            <h3 class="text-3xl font-bold text-gray-800">Pekerjaan</h3>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="modern-card timeline-item">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="font-bold text-xl text-gray-800">Lead Software Developer</p>
+                                        <p class="text-gray-600 font-medium">PT. LSKK</p>
+                                        <p class="text-gray-500 text-sm mt-1">2020 - Sekarang</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modern-card timeline-item">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
+                                    <div>
+                                        <p class="font-bold text-xl text-gray-800">Dosen Fakultas Ilmu Komputer</p>
+                                        <p class="text-gray-600 font-medium">Universitas Bandar Lampung</p>
+                                        <p class="text-gray-500 text-sm mt-1">2018 - Sekarang</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -347,72 +767,282 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-20 md:py-24 bg-slate-100">
+        <section id="skills" class="py-24 md:py-32 bg-slate-50">
             <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl font-bold text-gray-800">Keahlian Profesional</h2>
-                    <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto mt-4 rounded"></div>
+                <div class="text-center mb-20 reveal">
+                    <h2 class="section-title">Keahlian Profesional</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Teknologi dan tools yang saya kuasai untuk membangun solusi digital</p>
                 </div>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-                    <!-- Skill Cards -->
-                    <div class="skill-card bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal text-center">
-                        <div class="text-blue-500 mb-4 inline-block p-4 bg-blue-100 dark:bg-slate-700 rounded-full skill-icon"><i class="fas fa-microchip text-3xl sm:text-4xl"></i></div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">IoT</h3>
-                        <p class="text-gray-600 text-sm sm:text-base">Integrasi perangkat & data.</p>
+
+                <!-- Main Skills Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
+                    <!-- IoT -->
+                    <div class="skill-card reveal">
+                        <div class="skill-icon text-blue-500">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">IoT</h3>
+                        <p class="text-gray-600 mb-4">Internet of Things Development</p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="tech-badge">Arduino</span>
+                            <span class="tech-badge">MQTT</span>
+                            <span class="tech-badge">Sensors</span>
+                        </div>
                     </div>
-                    <div class="skill-card bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal text-center">
-                        <div class="text-blue-500 mb-4 inline-block p-4 bg-blue-100 dark:bg-slate-700 rounded-full skill-icon"><i class="fas fa-server text-3xl sm:text-4xl"></i></div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">Backend</h3>
-                        <p class="text-gray-600 text-sm sm:text-base">Node.js & NestJS.</p>
+
+                    <!-- Backend -->
+                    <div class="skill-card reveal">
+                        <div class="skill-icon text-green-500">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Backend</h3>
+                        <p class="text-gray-600 mb-4">Server-side Development</p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">NestJS</span>
+                            <span class="tech-badge">Express</span>
+                        </div>
                     </div>
-                    <div class="skill-card bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal text-center">
-                        <div class="text-blue-500 mb-4 inline-block p-4 bg-blue-100 dark:bg-slate-700 rounded-full skill-icon"><i class="fas fa-code text-3xl sm:text-4xl"></i></div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">Web Dev</h3>
-                        <p class="text-gray-600 text-sm sm:text-base">React.js & Vue.js.</p>
+
+                    <!-- Web Development -->
+                    <div class="skill-card reveal">
+                        <div class="skill-icon text-cyan-500">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Web Dev</h3>
+                        <p class="text-gray-600 mb-4">Modern Web Applications</p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Vue.js</span>
+                            <span class="tech-badge">Next.js</span>
+                        </div>
                     </div>
-                    <div class="skill-card bg-white p-6 sm:p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal text-center">
-                        <div class="text-blue-500 mb-4 inline-block p-4 bg-blue-100 dark:bg-slate-700 rounded-full skill-icon"><i class="fas fa-mobile-alt text-3xl sm:text-4xl"></i></div>
-                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-3">Mobile Dev</h3>
-                        <p class="text-gray-600 text-sm sm:text-base">React Native.</p>
+
+                    <!-- Mobile Development -->
+                    <div class="skill-card reveal">
+                        <div class="skill-icon text-purple-500">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Mobile Dev</h3>
+                        <p class="text-gray-600 mb-4">Cross-platform Apps</p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="tech-badge">React Native</span>
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">Expo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Skills -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                    <!-- Database -->
+                    <div class="modern-card">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Database</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">Redis</span>
+                        </div>
+                    </div>
+
+                    <!-- DevOps & Tools -->
+                    <div class="modern-card">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">DevOps</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">Git</span>
+                            <span class="tech-badge">CI/CD</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                    </div>
+
+                    <!-- Design & Others -->
+                    <div class="modern-card">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center text-white text-xl">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Design & UI</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge">Figma</span>
+                            <span class="tech-badge">Tailwind</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">Material UI</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-20 md:py-24 bg-white">
+        <section id="projects" class="py-24 md:py-32 bg-white">
             <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-16 reveal">
-                    <h2 class="text-4xl font-bold text-gray-800">Proyek Unggulan</h2>
-                    <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 to-teal-400 mx-auto mt-4 rounded"></div>
+                <div class="text-center mb-20 reveal">
+                    <h2 class="section-title">Proyek Unggulan</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Beberapa karya terbaik yang telah saya kerjakan</p>
                 </div>
                 <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Skeleton Loaders will be injected here by JS -->
+                    <!-- Projects will be injected here by JS -->
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 md:py-24 bg-slate-100">
-            <div class="container mx-auto px-4 sm:px-6 text-center reveal">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">Mari Terhubung</h2>
-                <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Saya selalu terbuka untuk diskusi mengenai proyek baru, peluang kolaborasi, atau sekadar bertukar pikiran. Jangan ragu untuk menghubungi saya.</p>
-                <a href="mailto:asep.iot@ubl.ac.id" class="btn btn-primary inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-3 px-8 sm:py-4 sm:px-10 rounded-full text-lg transition duration-300 ease-in-out transform">
-                    <i class="fas fa-envelope"></i> Kirim Email
-                </a>
+        <section id="contact" class="py-24 md:py-32 bg-gradient-to-br from-blue-50 to-indigo-100">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-20 reveal">
+                    <h2 class="section-title">Mari Terhubung</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-subtitle">Saya selalu terbuka untuk diskusi mengenai proyek baru dan peluang kolaborasi</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
+                    <!-- Email Card -->
+                    <div class="contact-card reveal">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
+                        <p class="text-gray-600 text-sm mb-4">Kirim pesan langsung</p>
+                        <a href="mailto:asep.iot@ubl.ac.id" class="text-blue-600 hover:text-blue-700 font-medium">
+                            asep.iot@ubl.ac.id
+                        </a>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="contact-card reveal">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Telepon</h3>
+                        <p class="text-gray-600 text-sm mb-4">Hubungi via WhatsApp</p>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="text-green-600 hover:text-green-700 font-medium">
+                            +62 812-3456-7890
+                        </a>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="contact-card reveal">
+                        <div class="contact-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Lokasi</h3>
+                        <p class="text-gray-600 text-sm mb-4">Bandung, Indonesia</p>
+                        <p class="text-gray-500 font-medium">
+                            Available for Remote
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="text-center reveal">
+                    <a href="mailto:asep.iot@ubl.ac.id" class="btn btn-primary text-lg">
+                        <i class="fas fa-paper-plane"></i>
+                        Mulai Diskusi Project
+                    </a>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="flex gap-6 justify-center mt-12 reveal">
+                    <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-600 hover:text-white hover:bg-blue-600 transition-all shadow-md hover:shadow-xl hover:scale-110">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-800 hover:text-white hover:bg-gray-800 transition-all shadow-md hover:shadow-xl hover:scale-110">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-pink-600 hover:text-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 transition-all shadow-md hover:shadow-xl hover:scale-110">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/aseptrisna" target="_blank" rel="noopener noreferrer" 
+                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-400 transition-all shadow-md hover:shadow-xl hover:scale-110">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-400 py-10">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-             <div class="flex justify-center space-x-6 mb-6">
-                <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors duration-300"><i class="fab fa-linkedin-in text-2xl"></i></a>
-                <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors duration-300"><i class="fab fa-github text-2xl"></i></a>
-                <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-300 py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <!-- About -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Asep Trisna S.
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed mb-4">
+                        Software Engineer yang passionate dalam menciptakan solusi teknologi inovatif dan berkualitas.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all hover:scale-110">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-all hover:scale-110">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" 
+                           class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 rounded-lg flex items-center justify-center transition-all hover:scale-110">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-blue-400 transition-colors">Tentang Saya</a></li>
+                        <li><a href="#skills" class="hover:text-blue-400 transition-colors">Keahlian</a></li>
+                        <li><a href="#projects" class="hover:text-blue-400 transition-colors">Proyek</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Kontak</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <a href="mailto:asep.iot@ubl.ac.id" class="hover:text-blue-400 transition-colors">
+                                asep.iot@ubl.ac.id
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-blue-400"></i>
+                            <span>Bandung, Indonesia</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; <span id="currentYear"></span> Asep Trisna Setiawan. All Rights Reserved.</p>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; <span id="currentYear"></span> Asep Trisna Setiawan. All Rights Reserved. 
+                    <span class="text-blue-400">Made with ❤️</span>
+                </p>
+            </div>
         </div>
     </footer>
     
