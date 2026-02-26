@@ -12,823 +12,1128 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="Asep Trisna Setiawan - Software Engineer profesional dengan keahlian dalam pengembangan web modern, mobile apps, dan solusi teknologi. Portfolio project dan pengalaman kerja." />
     <meta name="keywords" content="Software Engineer, Web Developer, Mobile Developer, Full Stack Developer, Portfolio, Asep Trisna Setiawan, Programmer Indonesia" />
     <meta name="author" content="Asep Trisna Setiawan" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="Indonesian" />
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aseptrisna.com/" />
     <meta property="og:title" content="Asep Trisna Setiawan - Software Engineer Portfolio" />
     <meta property="og:description" content="Software Engineer profesional dengan keahlian dalam pengembangan web modern dan mobile apps. Lihat portfolio dan project saya." />
     <meta property="og:image" content="https://aseptrisna.com/profile/profile.jpg" />
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://aseptrisna.com/" />
     <meta name="twitter:title" content="Asep Trisna Setiawan - Software Engineer Portfolio" />
     <meta name="twitter:description" content="Software Engineer profesional dengan keahlian dalam pengembangan web modern dan mobile apps." />
     <meta name="twitter:image" content="https://aseptrisna.com/profile/profile.jpg" />
-    
-    <meta name="theme-color" content="#0f172a" />
+
+    <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://aseptrisna.com/" />
 
     <title>Asep Trisna Setiawan - Software Engineer | Portfolio</title>
 
-    <!-- Google Fonts: Poppins (More modern than Inter) -->
+    <!-- Google Fonts: Inter + Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
     <style>
-        /* --- ULTRA MODERN Design System --- */
+        /* ============================================
+           NEXT-GEN PORTFOLIO DESIGN SYSTEM
+           ============================================ */
+
         :root {
-            /* Enhanced Color Palette */
-            --bg-light: #fafafa;
-            --bg-dark: #0a0a0a;
-            --card-light: #ffffff;
-            --card-dark: #1a1a1a;
-            --text-light: #0a0a0a;
-            --text-dark: #fafafa;
-            --text-muted-light: #525252;
-            --text-muted-dark: #a3a3a3;
-            --border-light: #e5e5e5;
-            --border-dark: #262626;
-            
-            /* Premium Gradient Collection */
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-            --gradient-cool: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
-            --gradient-sunset: linear-gradient(135deg, #ff6b6b 0%, #feca57 50%, #48dbfb 100%);
-            
-            /* Enhanced Shadows */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
-            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
-            --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.20);
-            --shadow-colored: 0 8px 32px rgba(102, 126, 234, 0.25);
+            --bg: #fafafa;
+            --bg-secondary: #f3f4f6;
+            --card: #ffffff;
+            --text: #111827;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-dark: #4f46e5;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
+            --gradient-2: linear-gradient(135deg, #06b6d4, #3b82f6, #6366f1);
+            --gradient-3: linear-gradient(135deg, #f43f5e, #ec4899, #a855f7);
+            --radius: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.05);
+            --shadow-xl: 0 20px 50px -12px rgba(0,0,0,0.15);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        /* --- Base Styles --- */
-        * {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        html.dark {
+            --bg: #0a0a0a;
+            --bg-secondary: #111111;
+            --card: #161616;
+            --text: #f5f5f5;
+            --text-secondary: #a3a3a3;
+            --border: #262626;
+            --accent-glow: rgba(99, 102, 241, 0.2);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.4);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
+            --shadow-xl: 0 20px 50px rgba(0,0,0,0.6);
         }
-        html {
-            scroll-behavior: smooth;
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            margin: 0; padding: 0; box-sizing: border-box;
         }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(180deg, #fafafa 0%, #f0f0f0 100%);
-            color: var(--text-light);
-            transition: all 0.3s ease;
-            overflow-x: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.7;
+            overflow-x: hidden;
+            transition: background var(--transition), color var(--transition);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* --- Enhanced Dark Mode --- */
-        html.dark body {
-            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-            color: var(--text-dark);
+        /* --- Custom Cursor --- */
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed; top: 0; left: 0;
+            pointer-events: none; z-index: 99999;
+            transition: transform 0.15s ease;
+            mix-blend-mode: difference;
         }
-        .dark .bg-white { background-color: var(--card-dark) !important; }
-        .dark .bg-slate-50,
-        .dark .bg-slate-100 { background: var(--bg-dark) !important; }
-        .dark .text-gray-800,
-        .dark .text-gray-900 { color: var(--text-dark) !important; }
-        .dark .text-gray-600,
-        .dark .text-gray-700 { color: var(--text-muted-dark) !important; }
-        .dark .border-gray-200 { border-color: var(--border-dark) !important; }
-        .dark .shadow-lg,
-        .dark .shadow-xl {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        .cursor-ring {
+            width: 40px; height: 40px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            position: fixed; top: 0; left: 0;
+            pointer-events: none; z-index: 99998;
+            transition: width 0.3s, height 0.3s, border 0.3s;
+            opacity: 0.5;
         }
-        .dark #navbar {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        .cursor-ring.hover {
+            width: 60px; height: 60px;
+            border-color: var(--accent-light);
+            opacity: 0.3;
         }
-
-        /* --- Ultra Modern Glass Cards --- */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            border-radius: 24px;
-            box-shadow: var(--shadow-colored);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .dark .glass-card {
-            background: rgba(26, 26, 26, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .glass-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-2xl);
-        }
-
-        /* --- Premium Card Styles --- */
-        .premium-card {
-            background: var(--card-light);
-            border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow-md);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-        .dark .premium-card {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
-        }
-        .premium-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.5s ease;
-        }
-        .premium-card:hover::before {
-            transform: scaleX(1);
-        }
-        .premium-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-2xl);
-            border-color: transparent;
+        @media (max-width: 768px) {
+            .cursor-dot, .cursor-ring { display: none; }
         }
 
         /* --- Preloader --- */
         #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-light);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            position: fixed; inset: 0;
+            background: var(--bg);
+            z-index: 100000;
+            display: flex; align-items: center; justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
         }
-        .dark #preloader {
-            background: var(--bg-dark);
-        }
-        .loader {
-            width: 60px;
-            height: 60px;
-            border: 4px solid rgba(59, 130, 246, 0.1);
-            border-top-color: var(--primary-color);
+        .loader-wrapper { text-align: center; }
+        .loader-spinner {
+            width: 48px; height: 48px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
+            margin: 0 auto 16px;
         }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
+        .loader-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.875rem; color: var(--text-secondary);
+            letter-spacing: 3px; text-transform: uppercase;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* --- Navbar --- */
+        #navbar {
+            position: fixed; top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all var(--transition);
+        }
+        #navbar.scrolled {
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 0;
+        }
+        html.dark #navbar.scrolled {
+            background: rgba(10,10,10,0.85);
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem; font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+        .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            padding: 0.5rem 1rem; border-radius: 10px;
+            transition: all var(--transition);
+            position: relative;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text);
+            background: var(--accent-glow);
+        }
+        .nav-cta {
+            background: var(--gradient-1) !important;
+            color: white !important;
+            padding: 0.5rem 1.5rem !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            transition: all var(--transition) !important;
+        }
+        .nav-cta:hover {
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5) !important;
+            transform: translateY(-2px);
+        }
+        .nav-right { display: flex; align-items: center; gap: 0.5rem; }
+        .theme-btn, .menu-btn {
+            width: 40px; height: 40px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid var(--border); border-radius: 12px;
+            background: var(--card); color: var(--text);
+            cursor: pointer; transition: all var(--transition);
+            font-size: 1rem;
+        }
+        .theme-btn:hover, .menu-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+        .menu-btn { display: none; }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .menu-btn { display: flex; }
         }
 
-        /* --- Enhanced Animations --- */
-        .reveal {
-            position: relative;
-            transform: translateY(60px);
-            opacity: 0;
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        /* --- Mobile Menu --- */
+        .mobile-menu {
+            position: fixed; inset: 0;
+            background: var(--bg);
+            z-index: 999;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            gap: 1.5rem;
+            opacity: 0; visibility: hidden;
+            transition: all 0.4s ease;
         }
-        .reveal.active {
-            transform: translateY(0);
-            opacity: 1;
+        .mobile-menu.open { opacity: 1; visibility: visible; }
+        .mobile-menu a {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem; font-weight: 600;
+            color: var(--text); text-decoration: none;
+            transition: color var(--transition);
         }
+        .mobile-menu a:hover { color: var(--accent); }
+        .mobile-close {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            width: 48px; height: 48px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid var(--border); border-radius: 14px;
+            background: var(--card); color: var(--text);
+            cursor: pointer; font-size: 1.25rem;
+            transition: all var(--transition);
+        }
+        .mobile-close:hover { border-color: var(--accent); }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center;
+            position: relative; overflow: hidden;
+            padding: 8rem 1.5rem 4rem;
         }
-        @keyframes gradient-shift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .hero-mesh {
+            position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99,102,241,0.15), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(139,92,246,0.1), transparent),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(6,182,212,0.08), transparent);
+            z-index: 0;
         }
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        html.dark .hero-mesh {
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99,102,241,0.2), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(139,92,246,0.12), transparent),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(6,182,212,0.1), transparent);
         }
-
-        /* --- ULTRA Hero Section --- */
-        #hero {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 60%, #f093fb 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 15s ease infinite;
+        .hero-grid-bg {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            z-index: 0;
         }
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+        .hero-container {
+            max-width: 1200px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 4rem; align-items: center;
+            position: relative; z-index: 2;
         }
-        .dark #hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #312e81 60%, #581c87 100%);
-            background-size: 200% 200%;
-            animation: gradientShift 15s ease infinite;
+        @media (max-width: 968px) {
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero-right { order: -1; }
         }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1;
-            opacity: 0.6;
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: var(--accent-glow);
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 50px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.85rem; font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
         }
-        .hero-content {
-            position: relative;
-            z-index: 2;
+        .hero-badge .pulse-dot {
+            width: 8px; height: 8px; background: #22c55e;
+            border-radius: 50%; position: relative;
+        }
+        .hero-badge .pulse-dot::after {
+            content: ''; position: absolute; inset: -3px;
+            background: rgba(34,197,94,0.3); border-radius: 50%;
+            animation: pulse-ring 2s ease infinite;
+        }
+        @keyframes pulse-ring {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
         }
         .hero-title {
-            font-size: clamp(2.5rem, 8vw, 6rem);
-            font-weight: 900;
-            line-height: 1;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #e0f2fe 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700; line-height: 1.1;
             margin-bottom: 1.5rem;
-            animation: float 6s ease-in-out infinite;
-            letter-spacing: -0.02em;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            letter-spacing: -0.03em;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
+        .hero-title .gradient-text {
+            background: var(--gradient-1);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .hero-subtitle {
-            font-size: clamp(1.125rem, 3vw, 1.75rem);
-            color: rgba(255, 255, 255, 0.95);
-            font-weight: 400;
-            line-height: 1.6;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        .hero-desc {
+            font-size: 1.125rem; color: var(--text-secondary);
+            margin-bottom: 2rem; max-width: 500px;
+            line-height: 1.8;
         }
-        /* --- PREMIUM Button Styles --- */
+        @media (max-width: 968px) {
+            .hero-desc { margin: 0 auto 2rem; }
+        }
+        .hero-typewriter {
+            display: inline-block;
+            border-right: 3px solid var(--accent);
+            animation: blink-caret 0.75s step-end infinite;
+            padding-right: 4px;
+        }
+        @keyframes blink-caret { 50% { border-color: transparent; } }
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+        @media (max-width: 968px) { .hero-buttons { justify-content: center; } }
         .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            font-weight: 600;
-            padding: 1.125rem 2.5rem;
-            border-radius: 50px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-            text-decoration: none;
-            font-size: 1.0625rem;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
+            display: inline-flex; align-items: center; gap: 0.625rem;
+            padding: 0.875rem 2rem;
+            border-radius: 14px; font-weight: 600; font-size: 0.95rem;
+            text-decoration: none; cursor: pointer; border: none;
+            transition: all var(--transition);
+            position: relative; overflow: hidden;
         }
         .btn-primary {
-            background: var(--gradient-primary);
+            background: var(--gradient-1);
             color: white;
-            box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(99,102,241,0.35);
         }
         .btn-primary:hover {
-            box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
-            transform: translateY(-4px) scale(1.05);
-        }
-        .btn-primary:active {
-            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.5);
+            transform: translateY(-3px);
         }
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            color: white;
-            backdrop-filter: blur(12px);
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
         }
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.6);
-            transform: translateY(-4px);
+            border-color: var(--accent);
+            background: var(--accent-glow);
+            transform: translateY(-3px);
         }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #667eea;
-            color: #667eea;
+        .hero-social {
+            display: flex; gap: 0.75rem; margin-top: 2.5rem;
         }
-        .btn-outline:hover {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-            transform: translateY(-4px);
+        @media (max-width: 968px) { .hero-social { justify-content: center; } }
+        .hero-social a {
+            width: 44px; height: 44px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid var(--border); border-radius: 12px;
+            color: var(--text-secondary);
+            text-decoration: none; font-size: 1.1rem;
+            transition: all var(--transition);
         }
-
-        /* --- Section Title Styles --- */
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
+        .hero-social a:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+            background: var(--accent-glow);
+            transform: translateY(-3px);
         }
-        .section-subtitle {
-            font-size: 1.125rem;
-            color: var(--text-muted-light);
-            max-width: 600px;
-            margin: 0 auto 3rem;
+        /* Hero Image */
+        .hero-image-wrapper {
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
         }
-        .dark .section-subtitle {
-            color: var(--text-muted-dark);
-        }
-        .section-divider {
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            margin: 1.5rem auto 3rem;
-            border-radius: 2px;
-        }
-
-        /* --- Timeline Styles --- */
-        .timeline-dot {
+        .hero-image-glow {
             position: absolute;
-            left: -2.35rem;
-            top: 0.3rem;
-            transition: all 0.3s ease;
+            width: 80%; height: 80%;
+            background: var(--gradient-1);
+            filter: blur(60px);
+            opacity: 0.2;
+            border-radius: 50%;
+            animation: glow-pulse 4s ease infinite;
         }
-        .timeline-item:hover .timeline-dot {
-            transform: scale(1.3);
-            box-shadow: 0 0 0 8px rgba(59, 130, 246, 0.2);
+        @keyframes glow-pulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.25; transform: scale(1.05); }
         }
-
-        /* --- Skill Card Styles --- */
-        .skill-card {
-            background: var(--card-light);
-            padding: 1.5rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-            cursor: pointer;
-        }
-        .dark .skill-card {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
-        }
-        .skill-card:hover {
-            transform: translateY(-8px) rotate(2deg);
+        .hero-image {
+            width: 380px; height: 380px;
+            border-radius: var(--radius-xl);
+            object-fit: cover;
+            position: relative;
+            border: 3px solid var(--border);
             box-shadow: var(--shadow-xl);
         }
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
+        @media (max-width: 968px) {
+            .hero-image { width: 250px; height: 250px; }
         }
-        .skill-card:hover .skill-icon {
-            transform: scale(1.2) rotate(-5deg);
-        }
-
-        /* --- Stats Card --- */
-        .stats-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--gradient-primary);
-            border-radius: 20px;
-            color: white;
+        /* Floating badges around hero image */
+        .float-badge {
+            position: absolute;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 0.75rem 1rem;
+            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.8rem; font-weight: 600;
             box-shadow: var(--shadow-lg);
-            transition: all 0.3s ease;
+            animation: float-bounce 3s ease-in-out infinite;
+            white-space: nowrap;
         }
-        .stats-card:hover {
-            transform: scale(1.05);
-            box-shadow: var(--shadow-2xl);
+        .float-badge i { font-size: 1.1rem; }
+        .float-badge:nth-child(2) { top: 10%; right: -10%; animation-delay: -0.5s; }
+        .float-badge:nth-child(3) { bottom: 15%; left: -10%; animation-delay: -1s; }
+        .float-badge:nth-child(4) { top: 60%; right: -15%; animation-delay: -1.5s; }
+        @keyframes float-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
-        .stats-number {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1;
-        }
-        .stats-label {
-            font-size: 0.875rem;
-            opacity: 0.9;
-            margin-top: 0.5rem;
+        @media (max-width: 968px) {
+            .float-badge { display: none; }
         }
 
-        /* --- Project Card Styles --- */
-        .project-card {
-            background: var(--card-light);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        /* --- Section Common --- */
+        .section { padding: 6rem 1.5rem; }
+        .section-alt { background: var(--bg-secondary); }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
         }
-        .dark .project-card {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700; letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+        .section-desc {
+            font-size: 1.05rem; color: var(--text-secondary);
+            max-width: 550px; margin: 0 auto;
+        }
+
+        /* --- Reveal Animation --- */
+        .reveal {
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* --- Marquee Tech Strip --- */
+        .tech-marquee {
+            overflow: hidden;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+        .marquee-track {
+            display: flex; gap: 3rem;
+            animation: marquee 30s linear infinite;
+            width: max-content;
+        }
+        .marquee-item {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem; font-weight: 600;
+            color: var(--text-secondary);
+            white-space: nowrap;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .marquee-item span { color: var(--accent); font-size: 1.5rem; }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- About / Bento Grid --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.25rem;
+        }
+        @media (max-width: 768px) {
+            .bento-grid { grid-template-columns: 1fr; }
+        }
+        .bento-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .bento-card:hover {
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: 0 0 0 1px rgba(99,102,241,0.1), var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+        .bento-card.span-8 { grid-column: span 8; }
+        .bento-card.span-4 { grid-column: span 4; }
+        .bento-card.span-6 { grid-column: span 6; }
+        .bento-card.span-12 { grid-column: span 12; }
+        @media (max-width: 768px) {
+            .bento-card.span-8,
+            .bento-card.span-4,
+            .bento-card.span-6,
+            .bento-card.span-12 { grid-column: span 1; }
+        }
+        .bento-icon {
+            width: 48px; height: 48px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; margin-bottom: 1.25rem;
+        }
+        .bento-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.25rem; font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .bento-text { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        /* Profile card in bento */
+        .profile-card {
+            display: flex; align-items: center; gap: 2rem;
+        }
+        @media (max-width: 600px) {
+            .profile-card { flex-direction: column; text-align: center; }
+        }
+        .profile-img {
+            width: 120px; height: 120px; border-radius: 20px;
+            object-fit: cover; flex-shrink: 0;
+            border: 3px solid var(--border);
+        }
+        .profile-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem; font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .profile-role { color: var(--accent); font-weight: 600; margin-bottom: 0.75rem; }
+        .profile-desc { color: var(--text-secondary); font-size: 0.95rem; }
+        .cv-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.625rem 1.5rem; border-radius: 12px;
+            background: var(--accent-glow);
+            color: var(--accent); font-weight: 600; font-size: 0.875rem;
+            text-decoration: none; border: 1px solid rgba(99,102,241,0.2);
+            transition: all var(--transition);
+        }
+        .cv-btn:hover { background: var(--accent); color: white; }
+
+        /* Stats in bento */
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        @media (max-width: 500px) { .stat-grid { grid-template-columns: 1fr; } }
+        .stat-item { text-align: center; }
+        .stat-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem; font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.85rem; color: var(--text-secondary);
+            margin-top: 0.25rem; font-weight: 500;
+        }
+
+        /* Timeline in bento */
+        .timeline { display: flex; flex-direction: column; gap: 1.25rem; }
+        .timeline-item {
+            display: flex; gap: 1rem; align-items: flex-start;
+            padding: 1rem;
+            border-radius: 14px;
+            transition: background var(--transition);
+        }
+        .timeline-item:hover { background: var(--accent-glow); }
+        .timeline-dot-wrapper {
+            display: flex; flex-direction: column; align-items: center;
+            padding-top: 0.25rem;
+        }
+        .timeline-dot {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .timeline-title { font-weight: 700; font-size: 1rem; }
+        .timeline-subtitle { color: var(--text-secondary); font-size: 0.875rem; }
+        .timeline-date { color: var(--accent); font-size: 0.8rem; font-weight: 600; }
+
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        .skill-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            transition: all var(--transition);
+            position: relative; overflow: hidden;
+        }
+        .skill-card::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .skill-card:hover::before { transform: scaleX(1); }
+        .skill-card:hover {
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: 0 0 0 1px rgba(99,102,241,0.1), var(--shadow-lg);
+            transform: translateY(-6px);
+        }
+        .skill-icon-box {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1.25rem;
+            transition: transform var(--transition-spring);
+        }
+        .skill-card:hover .skill-icon-box { transform: scale(1.1) rotate(-5deg); }
+        .skill-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            margin-bottom: 0.375rem;
+        }
+        .skill-desc { color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1rem; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; }
+        .tech-tag {
+            display: inline-block;
+            padding: 0.3rem 0.75rem;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-radius: 8px;
+            font-size: 0.75rem; font-weight: 600;
+            border: 1px solid rgba(99,102,241,0.15);
+            transition: all var(--transition);
+        }
+        .tech-tag:hover {
+            background: var(--accent); color: white;
+        }
+
+        /* --- Projects Section --- */
+        .projects-filter {
+            display: flex; gap: 0.5rem; justify-content: center;
+            flex-wrap: wrap; margin-bottom: 3rem;
+        }
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            border-radius: 10px; border: 1px solid var(--border);
+            background: var(--card); color: var(--text-secondary);
+            font-size: 0.85rem; font-weight: 600;
+            cursor: pointer; transition: all var(--transition);
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent); color: white;
+            border-color: var(--accent);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+        @media (max-width: 400px) {
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+        .project-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition);
+            display: flex; flex-direction: column;
         }
         .project-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-2xl);
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: 0 0 0 1px rgba(99,102,241,0.1), var(--shadow-xl);
+            transform: translateY(-8px);
         }
-        .project-card img {
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        .project-image-wrapper {
+            position: relative; overflow: hidden;
+            height: 220px;
         }
-        .project-card:hover img {
-            transform: scale(1.1);
+        .project-image-wrapper img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s ease;
         }
-        .tech-badge {
-            display: inline-block;
-            padding: 0.375rem 0.875rem;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary-color);
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin: 0.25rem;
-            border: 1px solid rgba(59, 130, 246, 0.2);
+        .project-card:hover .project-image-wrapper img {
+            transform: scale(1.08);
         }
-        .dark .tech-badge {
-            background: rgba(59, 130, 246, 0.15);
-            border-color: rgba(59, 130, 246, 0.3);
+        .project-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex; align-items: flex-end; justify-content: flex-start;
+            padding: 1.25rem;
         }
-
-        /* --- Scroll to Top Button --- */
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: var(--shadow-lg);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1000;
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-overlay-badge {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            color: white; font-size: 0.8rem; font-weight: 600;
+            padding: 0.375rem 0.875rem; border-radius: 8px;
         }
-        #scrollTopBtn:hover {
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: var(--shadow-2xl);
+        .project-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .project-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem; font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .project-desc {
+            color: var(--text-secondary); font-size: 0.9rem;
+            line-height: 1.7; flex: 1;
+            display: -webkit-box; -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical; overflow: hidden;
         }
 
         /* --- Contact Section --- */
-        .contact-card {
-            background: var(--card-light);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-            text-align: center;
-            transition: all 0.3s ease;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem; max-width: 1000px; margin: 0 auto;
         }
-        .dark .contact-card {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
+        .contact-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 2rem; text-align: center;
+            transition: all var(--transition);
         }
         .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: 0 0 0 1px rgba(99,102,241,0.1), var(--shadow-lg);
+            transform: translateY(-6px);
         }
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
+        .contact-icon-box {
+            width: 56px; height: 56px;
+            border-radius: 16px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.25rem; margin: 0 auto 1rem;
             color: white;
         }
+        .contact-title { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .contact-subtitle { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem; }
+        .contact-link {
+            color: var(--accent); font-weight: 600;
+            text-decoration: none; font-size: 0.95rem;
+            transition: color var(--transition);
+        }
+        .contact-link:hover { color: var(--accent-dark); }
+        .contact-social {
+            display: flex; gap: 0.75rem; justify-content: center;
+            margin-top: 3rem;
+        }
+        .contact-social a {
+            width: 52px; height: 52px;
+            display: flex; align-items: center; justify-content: center;
+            border: 1px solid var(--border); border-radius: 16px;
+            color: var(--text-secondary); font-size: 1.2rem;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+        .contact-social a:hover {
+            color: white; border-color: transparent;
+            transform: translateY(-4px);
+        }
+        .contact-social a.linkedin:hover { background: #0077b5; }
+        .contact-social a.github:hover { background: #333; }
+        html.dark .contact-social a.github:hover { background: #f5f5f5; color: #333; }
+        .contact-social a.instagram:hover { background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); }
+        .contact-social a.twitter:hover { background: #1da1f2; }
+        .cta-box {
+            text-align: center; margin-top: 3rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 3rem 2rem;
+        }
+        .cta-box h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem; font-weight: 700; margin-bottom: 0.75rem;
+        }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 1.5rem; }
 
-        /* --- Form Styles --- */
-        .form-input {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--border-light);
-            border-radius: 12px;
-            background: var(--card-light);
-            color: var(--text-light);
-            font-size: 1rem;
-            transition: all 0.3s ease;
+        /* --- Footer --- */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 1.5rem;
         }
-        .dark .form-input {
-            background: var(--card-dark);
-            border-color: var(--border-dark);
-            color: var(--text-dark);
+        .footer-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            flex-wrap: wrap; gap: 1rem;
         }
-        .form-input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        .footer-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700; font-size: 1.1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .footer-copy { color: var(--text-secondary); font-size: 0.85rem; }
+        .footer-links { display: flex; gap: 1.5rem; }
+        .footer-links a {
+            color: var(--text-secondary); text-decoration: none;
+            font-size: 0.85rem; transition: color var(--transition);
+        }
+        .footer-links a:hover { color: var(--accent); }
+
+        /* --- Scroll Top --- */
+        .scroll-top {
+            position: fixed; bottom: 2rem; right: 2rem;
+            width: 48px; height: 48px;
+            background: var(--gradient-1); color: white;
+            border: none; border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.3);
+            opacity: 0; visibility: hidden;
+            transition: all var(--transition);
+            z-index: 100;
+        }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(99,102,241,0.5);
         }
 
-        /* --- Responsive Utilities --- */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .stats-number {
-                font-size: 2rem;
-            }
+        /* --- Loading skeleton --- */
+        .skeleton {
+            background: linear-gradient(90deg, var(--border) 25%, transparent 50%, var(--border) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
         }
-
-        /* Skeleton Loader for Projects */
-        .skeleton-card {
-            background-color: var(--card-light);
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-        .dark .skeleton-card {
-            background-color: var(--card-dark);
-        }
-        .skeleton-img {
-            height: 14rem;
-            background-color: #e5e5e5;
-        }
-        .dark .skeleton-img {
-            background-color: #262626;
-        }
-        .skeleton-text {
-            height: 1.25rem;
-            margin-bottom: 0.75rem;
-            border-radius: 0.25rem;
-            background-color: #e5e5e5;
-        }
-        .dark .skeleton-text {
-            background-color: #262626;
-        }
-        @keyframes pulse {
-            50% {
-                opacity: .5;
-            }
-        }
-        .animate-pulse {
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-gray-900">
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
 
     <!-- Preloader -->
     <div id="preloader">
-        <div class="loader"></div>
+        <div class="loader-wrapper">
+            <div class="loader-spinner"></div>
+            <div class="loader-text">Loading</div>
+        </div>
     </div>
 
-    <!-- Header & Navbar -->
-    <header id="navbar" class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-md fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-sm">
-        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Asep Trisna S.
-            </a>
-            <div class="flex items-center gap-2">
-                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg transition-all font-medium">Tentang</a>
-                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg transition-all font-medium">Keahlian</a>
-                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-4 py-2 rounded-lg transition-all font-medium">Proyek</a>
-                    <a href="#contact" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-md">
-                        Hubungi
-                    </a>
-                </nav>
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" class="ml-2 lg:ml-4 p-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-all focus:outline-none rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-                    <i class="fas fa-sun text-xl" id="theme-toggle-light-icon"></i>
-                    <i class="fas fa-moon text-xl hidden" id="theme-toggle-dark-icon"></i>
+    <!-- Navbar -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">ATS.</a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#about" data-section="about">Tentang</a>
+                <a href="#skills" data-section="skills">Keahlian</a>
+                <a href="#projects" data-section="projects">Proyek</a>
+                <a href="#contact" class="nav-cta">Hubungi</a>
+            </nav>
+            <div class="nav-right">
+                <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon" id="themeIcon"></i>
                 </button>
-                <button id="mobile-menu-button" class="md:hidden ml-2 p-2 text-gray-700 dark:text-white focus:outline-none rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-                    <i class="fas fa-bars text-xl"></i>
+                <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
-            <a href="#about" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all px-6 py-3 font-medium">Tentang</a>
-            <a href="#skills" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all px-6 py-3 font-medium">Keahlian</a>
-            <a href="#projects" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all px-6 py-3 font-medium">Proyek</a>
-            <a href="#contact" class="block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 mx-4 my-3 rounded-full text-center shadow-md">Hubungi Saya</a>
-        </div>
     </header>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        <a href="#about" class="mobile-link">Tentang</a>
+        <a href="#skills" class="mobile-link">Keahlian</a>
+        <a href="#projects" class="mobile-link">Proyek</a>
+        <a href="#contact" class="mobile-link">Hubungi</a>
+    </div>
+
     <!-- Main Content -->
-    <main class="opacity-0">
+    <main id="mainContent" style="opacity:0">
+
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center py-20">
-            <div id="particles-js"></div>
-            <div class="container mx-auto px-4 sm:px-6 text-white text-center hero-content">
-                <div class="mb-6 reveal">
-                    <span class="inline-block bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-2 text-sm font-medium">
-                        👋 Selamat datang di portfolio saya
-                    </span>
+        <section class="hero" id="hero">
+            <div class="hero-mesh"></div>
+            <div class="hero-grid-bg"></div>
+            <div class="hero-container">
+                <div class="hero-left">
+                    <div class="hero-badge reveal">
+                        <span class="pulse-dot"></span>
+                        Tersedia untuk kolaborasi
+                    </div>
+                    <h1 class="hero-title reveal reveal-delay-1">
+                        Halo, saya<br>
+                        <span class="gradient-text">Asep Trisna S.</span>
+                    </h1>
+                    <p class="hero-desc reveal reveal-delay-2">
+                        Seorang <strong><span class="hero-typewriter" id="typewriter"></span></strong> yang passionate menciptakan solusi teknologi inovatif untuk Web, Mobile, dan IoT.
+                    </p>
+                    <div class="hero-buttons reveal reveal-delay-3">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-rocket"></i> Lihat Karya
+                        </a>
+                        <a href="resume/CV-Asep-Trisna-Setiawan.pdf" download class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Unduh CV
+                        </a>
+                    </div>
+                    <div class="hero-social reveal reveal-delay-4">
+                        <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <h1 class="hero-title reveal">
-                    Asep Trisna Setiawan
-                </h1>
-                <p class="hero-subtitle max-w-3xl mx-auto mb-12 reveal">
-                    Saya seorang <span class="font-bold text-cyan-300">Software Engineer</span> yang passionate dalam menciptakan solusi teknologi inovatif. 
-                    Spesialisasi dalam <span class="font-semibold">Web Development</span>, <span class="font-semibold">Mobile Apps</span>, dan <span class="font-semibold">IoT</span>.
-                </p>
-                <div class="flex flex-wrap gap-4 justify-center items-center reveal">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Lihat Karya Saya
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        Hubungi Saya
-                    </a>
-                </div>
-                <!-- Social Media Links -->
-                <div class="flex gap-6 justify-center mt-12 reveal">
-                    <a href="https://github.com/Aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://twitter.com/aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="https://instagram.com/aseptrisna" target="_blank" class="text-white/80 hover:text-white text-2xl transition-all hover:scale-110">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+                <div class="hero-right reveal reveal-delay-2">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-glow"></div>
+                        <img src="profile/photo.jpg" alt="Asep Trisna Setiawan" class="hero-image" onerror="this.onerror=null;this.src='https://placehold.co/400x400/6366f1/ffffff?text=ATS';">
+                        <div class="float-badge" style="top:5%; left:-15%;">
+                            <i class="fas fa-code" style="color:#6366f1;"></i> Full Stack
+                        </div>
+                        <div class="float-badge">
+                            <i class="fas fa-microchip" style="color:#06b6d4;"></i> IoT Expert
+                        </div>
+                        <div class="float-badge">
+                            <i class="fas fa-brain" style="color:#a855f7;"></i> AI / ML
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-24 md:py-32 bg-white">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-20 reveal">
-                    <h2 class="section-title">Tentang Saya</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subtitle">Mengenal lebih dekat profil dan pengalaman saya</p>
+        <!-- Tech Marquee -->
+        <div class="tech-marquee">
+            <div class="marquee-track" id="marqueeTrack">
+                <div class="marquee-item"><span>&#9679;</span> React.js</div>
+                <div class="marquee-item"><span>&#9679;</span> Node.js</div>
+                <div class="marquee-item"><span>&#9679;</span> Next.js</div>
+                <div class="marquee-item"><span>&#9679;</span> NestJS</div>
+                <div class="marquee-item"><span>&#9679;</span> Flutter</div>
+                <div class="marquee-item"><span>&#9679;</span> React Native</div>
+                <div class="marquee-item"><span>&#9679;</span> Python</div>
+                <div class="marquee-item"><span>&#9679;</span> Arduino</div>
+                <div class="marquee-item"><span>&#9679;</span> MQTT</div>
+                <div class="marquee-item"><span>&#9679;</span> Docker</div>
+                <div class="marquee-item"><span>&#9679;</span> MongoDB</div>
+                <div class="marquee-item"><span>&#9679;</span> PostgreSQL</div>
+                <div class="marquee-item"><span>&#9679;</span> AWS</div>
+                <div class="marquee-item"><span>&#9679;</span> Figma</div>
+                <div class="marquee-item"><span>&#9679;</span> TensorFlow</div>
+                <div class="marquee-item"><span>&#9679;</span> YOLOv8</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="marquee-item"><span>&#9679;</span> React.js</div>
+                <div class="marquee-item"><span>&#9679;</span> Node.js</div>
+                <div class="marquee-item"><span>&#9679;</span> Next.js</div>
+                <div class="marquee-item"><span>&#9679;</span> NestJS</div>
+                <div class="marquee-item"><span>&#9679;</span> Flutter</div>
+                <div class="marquee-item"><span>&#9679;</span> React Native</div>
+                <div class="marquee-item"><span>&#9679;</span> Python</div>
+                <div class="marquee-item"><span>&#9679;</span> Arduino</div>
+                <div class="marquee-item"><span>&#9679;</span> MQTT</div>
+                <div class="marquee-item"><span>&#9679;</span> Docker</div>
+                <div class="marquee-item"><span>&#9679;</span> MongoDB</div>
+                <div class="marquee-item"><span>&#9679;</span> PostgreSQL</div>
+                <div class="marquee-item"><span>&#9679;</span> AWS</div>
+                <div class="marquee-item"><span>&#9679;</span> Figma</div>
+                <div class="marquee-item"><span>&#9679;</span> TensorFlow</div>
+                <div class="marquee-item"><span>&#9679;</span> YOLOv8</div>
+            </div>
+        </div>
+
+        <!-- About Section (Bento Grid) -->
+        <section id="about" class="section">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <div class="section-label">Tentang Saya</div>
+                    <h2 class="section-title">Mengenal lebih dekat</h2>
+                    <p class="section-desc">Profil, pendidikan, dan pengalaman profesional saya</p>
                 </div>
 
-                <!-- Profile & Stats -->
-                <div class="grid lg:grid-cols-3 gap-8 mb-20">
-                    <!-- Profile Image -->
-                    <div class="lg:col-span-1 reveal">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl transform rotate-6"></div>
-                            <img src="profile/DSC08102.jpg" alt="Foto Profil Asep Trisna Setiawan" class="relative w-full aspect-square rounded-3xl object-cover shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/400x400/667eea/ffffff?text=Asep+T.S.';">
-                        </div>
-                    </div>
-
-                    <!-- Bio & Stats -->
-                    <div class="lg:col-span-2 space-y-8">
-                        <div class="reveal">
-                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Software Engineer & Educator</h3>
-                            <p class="text-lg text-gray-600 leading-relaxed mb-6">
-                                Saya adalah seorang software engineer yang memiliki keahlian dalam berbagai teknologi termasuk <strong class="text-blue-600">IoT</strong>, <strong class="text-blue-600">pengembangan backend</strong>, <strong class="text-blue-600">pengembangan web</strong>, dan <strong class="text-blue-600">aplikasi mobile</strong>. 
-                            </p>
-                            <p class="text-lg text-gray-600 leading-relaxed mb-8">
-                                Dengan hasrat untuk memecahkan masalah yang kompleks, saya berdedikasi untuk terus belajar dan memanfaatkan keterampilan saya untuk mendorong inovasi dan membangun aplikasi yang andal serta bermanfaat bagi pengguna.
-                            </p>
-                            <a href="resume/CV-Asep-Trisna-Setiawan.pdf" download class="btn btn-outline">
-                                <i class="fas fa-download"></i>
-                                Unduh CV Saya
-                            </a>
-                        </div>
-
-                        <!-- Stats Cards -->
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 reveal">
-                            <div class="stats-card">
-                                <div class="stats-number">5+</div>
-                                <div class="stats-label">Tahun Pengalaman</div>
-                            </div>
-                            <div class="stats-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                                <div class="stats-number">50+</div>
-                                <div class="stats-label">Proyek Selesai</div>
-                            </div>
-                            <div class="stats-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                                <div class="stats-number">100%</div>
-                                <div class="stats-label">Client Puas</div>
+                <div class="bento-grid">
+                    <!-- Profile Card -->
+                    <div class="bento-card span-8 reveal">
+                        <div class="profile-card">
+                            <img src="profile/photo.jpg" alt="Asep Trisna Setiawan" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/150x150/6366f1/ffffff?text=ATS';">
+                            <div>
+                                <h3 class="profile-name">Asep Trisna Setiawan</h3>
+                                <p class="profile-role">Software Engineer & Educator</p>
+                                <p class="profile-desc">
+                                    Software engineer dengan keahlian dalam IoT, pengembangan backend, web, dan aplikasi mobile. Berdedikasi untuk memecahkan masalah yang kompleks dan mendorong inovasi melalui teknologi.
+                                </p>
+                                <a href="resume/CV-Asep-Trisna-Setiawan.pdf" download class="cv-btn">
+                                    <i class="fas fa-download"></i> Unduh CV Saya
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Education & Experience Timeline -->
-                <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
-                    <!-- Pendidikan -->
-                    <div class="reveal">
-                        <div class="flex items-center gap-4 mb-10">
-                            <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white text-xl">
-                                <i class="fas fa-graduation-cap"></i>
+                    <!-- Stats Card -->
+                    <div class="bento-card span-4 reveal reveal-delay-1" style="display:flex; align-items:center;">
+                        <div class="stat-grid" style="width:100%;">
+                            <div class="stat-item">
+                                <div class="stat-number">5+</div>
+                                <div class="stat-label">Tahun</div>
                             </div>
-                            <h3 class="text-3xl font-bold text-gray-800">Pendidikan</h3>
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Proyek</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Puas</div>
+                            </div>
                         </div>
-                        <div class="space-y-8">
-                            <div class="modern-card timeline-item">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
-                                    <div>
-                                        <p class="font-bold text-xl text-gray-800">Magister Teknik Elektro</p>
-                                        <p class="text-gray-600 font-medium">Institut Teknologi Bandung (ITB)</p>
-                                        <p class="text-gray-500 text-sm mt-1">Spesialisasi: Teknologi Informasi</p>
-                                    </div>
+                    </div>
+
+                    <!-- Education -->
+                    <div class="bento-card span-6 reveal reveal-delay-2">
+                        <div class="bento-icon" style="background: rgba(99,102,241,0.1); color: #6366f1;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="bento-title">Pendidikan</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #6366f1;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Magister Teknik Elektro</div>
+                                    <div class="timeline-subtitle">Institut Teknologi Bandung (ITB) 2021-2023</div>
+                                    <!-- <div class="timeline-date">Spesialisasi: Teknologi Informasi</div> -->
                                 </div>
                             </div>
-                            <div class="modern-card timeline-item">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-3 h-3 bg-blue-500 rounded-full mt-2"></div>
-                                    <div>
-                                        <p class="font-bold text-xl text-gray-800">Sarjana Sistem Informasi</p>
-                                        <p class="text-gray-600 font-medium">Universitas Bandar Lampung (UBL)</p>
-                                        <p class="text-gray-500 text-sm mt-1">IPK: 3.8/4.0</p>
-                                    </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #8b5cf6;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Sarjana Sistem Informasi</div>
+                                    <div class="timeline-subtitle">Universitas Bandar Lampung (UBL) 2015-2019</div>
+                                    <!-- <div class="timeline-date">IPK: 3.8/4.0</div> -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Pengalaman Kerja -->
-                    <div class="reveal">
-                        <div class="flex items-center gap-4 mb-10">
-                            <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center text-white text-xl">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                            <h3 class="text-3xl font-bold text-gray-800">Pekerjaan</h3>
+                    <!-- Work Experience -->
+                    <div class="bento-card span-6 reveal reveal-delay-3">
+                        <div class="bento-icon" style="background: rgba(168,85,247,0.1); color: #a855f7;">
+                            <i class="fas fa-briefcase"></i>
                         </div>
-                        <div class="space-y-8">
-                            <div class="modern-card timeline-item">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
-                                    <div>
-                                        <p class="font-bold text-xl text-gray-800">Machine Learning Developer</p>
-                                        <p class="text-gray-600 font-medium">BPH Migas</p>
-                                        <p class="text-gray-500 text-sm mt-1">2024 - Sekarang</p>
-                                    </div>
+                        <div class="bento-title">Pengalaman Kerja</div>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #a855f7;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Machine Learning Developer</div>
+                                    <div class="timeline-subtitle">BPH Migas</div>
+                                    <div class="timeline-date">2026 - Sekarang</div>
                                 </div>
                             </div>
-                            <div class="modern-card timeline-item">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
-                                    <div>
-                                        <p class="font-bold text-xl text-gray-800">Lead Software Developer</p>
-                                        <p class="text-gray-600 font-medium">PT. LSKK</p>
-                                        <p class="text-gray-500 text-sm mt-1">2020 - Sekarang</p>
-                                    </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #f43f5e;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Dosen Fakultas Ilmu Komputer</div>
+                                    <div class="timeline-subtitle">Universitas Bandar Lampung</div>
+                                    <div class="timeline-date">2025 - Sekarang</div>
                                 </div>
                             </div>
-                            <div class="modern-card timeline-item">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-3 h-3 bg-purple-500 rounded-full mt-2"></div>
-                                    <div>
-                                        <p class="font-bold text-xl text-gray-800">Dosen Fakultas Ilmu Komputer</p>
-                                        <p class="text-gray-600 font-medium">Universitas Bandar Lampung</p>
-                                        <p class="text-gray-500 text-sm mt-1">2018 - Sekarang</p>
-                                    </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #ec4899;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Lead Software Developer</div>
+                                    <div class="timeline-subtitle">PT. LSKK</div>
+                                    <div class="timeline-date">2021 - 2025</div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -836,120 +1141,123 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-24 md:py-32 bg-slate-50">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-20 reveal">
-                    <h2 class="section-title">Keahlian Profesional</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subtitle">Teknologi dan tools yang saya kuasai untuk membangun solusi digital</p>
+        <section id="skills" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <div class="section-label">Keahlian</div>
+                    <h2 class="section-title">Tech Stack & Tools</h2>
+                    <p class="section-desc">Teknologi yang saya kuasai untuk membangun solusi digital</p>
                 </div>
 
-                <!-- Main Skills Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-16">
-                    <!-- IoT -->
+                <div class="skills-grid">
                     <div class="skill-card reveal">
-                        <div class="skill-icon text-blue-500">
+                        <div class="skill-icon-box" style="background: rgba(6,182,212,0.1); color: #06b6d4;">
                             <i class="fas fa-microchip"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">IoT</h3>
-                        <p class="text-gray-600 mb-4">Internet of Things Development</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="tech-badge">Arduino</span>
-                            <span class="tech-badge">MQTT</span>
-                            <span class="tech-badge">Sensors</span>
+                        <div class="skill-name">IoT</div>
+                        <div class="skill-desc">Internet of Things Development</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">Sensors</span>
+                            <span class="tech-tag">ESP32</span>
                         </div>
                     </div>
 
-                    <!-- Backend -->
-                    <div class="skill-card reveal">
-                        <div class="skill-icon text-green-500">
+                    <div class="skill-card reveal reveal-delay-1">
+                        <div class="skill-icon-box" style="background: rgba(34,197,94,0.1); color: #22c55e;">
                             <i class="fas fa-server"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Backend</h3>
-                        <p class="text-gray-600 mb-4">Server-side Development</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="tech-badge">Node.js</span>
-                            <span class="tech-badge">NestJS</span>
-                            <span class="tech-badge">Express</span>
+                        <div class="skill-name">Backend</div>
+                        <div class="skill-desc">Server-side Development</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                     </div>
 
-                    <!-- Web Development -->
-                    <div class="skill-card reveal">
-                        <div class="skill-icon text-cyan-500">
+                    <div class="skill-card reveal reveal-delay-2">
+                        <div class="skill-icon-box" style="background: rgba(99,102,241,0.1); color: #6366f1;">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Web Dev</h3>
-                        <p class="text-gray-600 mb-4">Modern Web Applications</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="tech-badge">React.js</span>
-                            <span class="tech-badge">Vue.js</span>
-                            <span class="tech-badge">Next.js</span>
+                        <div class="skill-name">Web Dev</div>
+                        <div class="skill-desc">Modern Web Applications</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Tailwind</span>
                         </div>
                     </div>
 
-                    <!-- Mobile Development -->
-                    <div class="skill-card reveal">
-                        <div class="skill-icon text-purple-500">
+                    <div class="skill-card reveal reveal-delay-3">
+                        <div class="skill-icon-box" style="background: rgba(168,85,247,0.1); color: #a855f7;">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Mobile Dev</h3>
-                        <p class="text-gray-600 mb-4">Cross-platform Apps</p>
-                        <div class="flex flex-wrap gap-2 justify-center">
-                            <span class="tech-badge">React Native</span>
-                            <span class="tech-badge">Flutter</span>
-                            <span class="tech-badge">Expo</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Additional Skills -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-                    <!-- Database -->
-                    <div class="modern-card">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center text-white text-xl">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">Database</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">MongoDB</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">PostgreSQL</span>
-                            <span class="tech-badge">Redis</span>
+                        <div class="skill-name">Mobile Dev</div>
+                        <div class="skill-desc">Cross-platform Apps</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Expo</span>
                         </div>
                     </div>
 
-                    <!-- DevOps & Tools -->
-                    <div class="modern-card">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-indigo-500 rounded-xl flex items-center justify-center text-white text-xl">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">DevOps</h3>
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-box" style="background: rgba(249,115,22,0.1); color: #f97316;">
+                            <i class="fas fa-database"></i>
                         </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">Docker</span>
-                            <span class="tech-badge">Git</span>
-                            <span class="tech-badge">CI/CD</span>
-                            <span class="tech-badge">AWS</span>
+                        <div class="skill-name">Database</div>
+                        <div class="skill-desc">Data Storage & Management</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Redis</span>
                         </div>
                     </div>
 
-                    <!-- Design & Others -->
-                    <div class="modern-card">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center text-white text-xl">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">Design & UI</h3>
+                    <div class="skill-card reveal reveal-delay-1">
+                        <div class="skill-icon-box" style="background: rgba(59,130,246,0.1); color: #3b82f6;">
+                            <i class="fas fa-cloud"></i>
                         </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-badge">Figma</span>
-                            <span class="tech-badge">Tailwind</span>
-                            <span class="tech-badge">Bootstrap</span>
-                            <span class="tech-badge">Material UI</span>
+                        <div class="skill-name">DevOps</div>
+                        <div class="skill-desc">Cloud & Infrastructure</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal reveal-delay-2">
+                        <div class="skill-icon-box" style="background: rgba(236,72,153,0.1); color: #ec4899;">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="skill-name">Design & UI</div>
+                        <div class="skill-desc">User Interface Design</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Bootstrap</span>
+                            <span class="tech-tag">Material UI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal reveal-delay-3">
+                        <div class="skill-icon-box" style="background: rgba(244,63,94,0.1); color: #f43f5e;">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="skill-name">AI / ML</div>
+                        <div class="skill-desc">Artificial Intelligence</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                     </div>
                 </div>
@@ -957,91 +1265,78 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-24 md:py-32 bg-white">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-20 reveal">
-                    <h2 class="section-title">Proyek Unggulan</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subtitle">Beberapa karya terbaik yang telah saya kerjakan</p>
+        <section id="projects" class="section">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <div class="section-label">Proyek</div>
+                    <h2 class="section-title">Karya Terbaik Saya</h2>
+                    <p class="section-desc">Beberapa project yang telah saya kerjakan</p>
                 </div>
-                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Projects will be injected here by JS -->
+
+                <div class="projects-filter reveal" id="projectsFilter">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="web">Web App</button>
+                    <button class="filter-btn" data-filter="iot">IoT</button>
+                    <button class="filter-btn" data-filter="ai">AI / ML</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                </div>
+
+                <div class="projects-grid" id="projectsGrid">
+                    <!-- Injected by JS -->
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-24 md:py-32 bg-gradient-to-br from-blue-50 to-indigo-100">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="text-center mb-20 reveal">
+        <section id="contact" class="section section-alt">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <div class="section-label">Kontak</div>
                     <h2 class="section-title">Mari Terhubung</h2>
-                    <div class="section-divider"></div>
-                    <p class="section-subtitle">Saya selalu terbuka untuk diskusi mengenai proyek baru dan peluang kolaborasi</p>
+                    <p class="section-desc">Selalu terbuka untuk diskusi proyek baru dan peluang kolaborasi</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-16">
-                    <!-- Email Card -->
+                <div class="contact-grid">
                     <div class="contact-card reveal">
-                        <div class="contact-icon">
+                        <div class="contact-icon-box" style="background: var(--gradient-1);">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Email</h3>
-                        <p class="text-gray-600 text-sm mb-4">Kirim pesan langsung</p>
-                        <a href="mailto:asep.iot@ubl.ac.id" class="text-blue-600 hover:text-blue-700 font-medium">
-                            asep.iot@ubl.ac.id
-                        </a>
+                        <div class="contact-title">Email</div>
+                        <div class="contact-subtitle">Kirim pesan langsung</div>
+                        <a href="mailto:asep.iot@ubl.ac.id" class="contact-link">asep.iot@ubl.ac.id</a>
                     </div>
 
-                    <!-- Phone Card -->
-                    <div class="contact-card reveal">
-                        <div class="contact-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                            <i class="fas fa-phone"></i>
+                    <div class="contact-card reveal reveal-delay-1">
+                        <div class="contact-icon-box" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                            <i class="fab fa-whatsapp"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Telepon</h3>
-                        <p class="text-gray-600 text-sm mb-4">Hubungi via WhatsApp</p>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="text-green-600 hover:text-green-700 font-medium">
-                            +62 812-3456-7890
-                        </a>
+                        <div class="contact-title">WhatsApp</div>
+                        <div class="contact-subtitle">Chat langsung via WA</div>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="contact-link" style="color:#22c55e;">+62 812-3456-7890</a>
                     </div>
 
-                    <!-- Location Card -->
-                    <div class="contact-card reveal">
-                        <div class="contact-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <div class="contact-card reveal reveal-delay-2">
+                        <div class="contact-icon-box" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Lokasi</h3>
-                        <p class="text-gray-600 text-sm mb-4">Bandung, Indonesia</p>
-                        <p class="text-gray-500 font-medium">
-                            Available for Remote
-                        </p>
+                        <div class="contact-title">Lokasi</div>
+                        <div class="contact-subtitle">Bandung, Indonesia</div>
+                        <span class="contact-link" style="cursor:default;">Available for Remote</span>
                     </div>
                 </div>
 
-                <!-- CTA Button -->
-                <div class="text-center reveal">
-                    <a href="mailto:asep.iot@ubl.ac.id" class="btn btn-primary text-lg">
-                        <i class="fas fa-paper-plane"></i>
-                        Mulai Diskusi Project
-                    </a>
+                <div class="contact-social reveal">
+                    <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/aseptrisna" target="_blank" rel="noopener noreferrer" class="twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 </div>
 
-                <!-- Social Media Links -->
-                <div class="flex gap-6 justify-center mt-12 reveal">
-                    <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" 
-                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-600 hover:text-white hover:bg-blue-600 transition-all shadow-md hover:shadow-xl hover:scale-110">
-                        <i class="fab fa-linkedin-in text-xl"></i>
-                    </a>
-                    <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" 
-                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-gray-800 hover:text-white hover:bg-gray-800 transition-all shadow-md hover:shadow-xl hover:scale-110">
-                        <i class="fab fa-github text-xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" 
-                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-pink-600 hover:text-white hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 transition-all shadow-md hover:shadow-xl hover:scale-110">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="https://twitter.com/aseptrisna" target="_blank" rel="noopener noreferrer" 
-                       class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-400 transition-all shadow-md hover:shadow-xl hover:scale-110">
-                        <i class="fab fa-twitter text-xl"></i>
+                <div class="cta-box reveal">
+                    <h3>Punya proyek menarik?</h3>
+                    <p>Saya siap membantu mewujudkan ide Anda menjadi solusi digital yang nyata.</p>
+                    <a href="mailto:asep.iot@ubl.ac.id" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Mulai Diskusi
                     </a>
                 </div>
             </div>
@@ -1049,358 +1344,222 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-300 py-16">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-3 gap-12 mb-12">
-                <!-- About -->
-                <div>
-                    <h3 class="text-2xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                        Asep Trisna S.
-                    </h3>
-                    <p class="text-gray-400 leading-relaxed mb-4">
-                        Software Engineer yang passionate dalam menciptakan solusi teknologi inovatif dan berkualitas.
-                    </p>
-                    <div class="flex gap-3">
-                        <a href="https://www.linkedin.com/in/asep-trisna-setiawan-9a31a5113/" target="_blank" rel="noopener noreferrer" 
-                           class="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all hover:scale-110">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/asepiot" target="_blank" rel="noopener noreferrer" 
-                           class="w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-all hover:scale-110">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/asep.iot/" target="_blank" rel="noopener noreferrer" 
-                           class="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-500 rounded-lg flex items-center justify-center transition-all hover:scale-110">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="hover:text-blue-400 transition-colors">Tentang Saya</a></li>
-                        <li><a href="#skills" class="hover:text-blue-400 transition-colors">Keahlian</a></li>
-                        <li><a href="#projects" class="hover:text-blue-400 transition-colors">Proyek</a></li>
-                        <li><a href="#contact" class="hover:text-blue-400 transition-colors">Kontak</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div>
-                    <h4 class="text-lg font-bold text-white mb-4">Kontak</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-blue-400"></i>
-                            <a href="mailto:asep.iot@ubl.ac.id" class="hover:text-blue-400 transition-colors">
-                                asep.iot@ubl.ac.id
-                            </a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-map-marker-alt text-blue-400"></i>
-                            <span>Bandung, Indonesia</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-700 pt-8 text-center">
-                <p class="text-gray-400">
-                    &copy; <span id="currentYear"></span> Asep Trisna Setiawan. All Rights Reserved. 
-                    <span class="text-blue-400">Made with ❤️</span>
-                </p>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">Asep Trisna S.</div>
+            <div class="footer-copy">&copy; <span id="currentYear"></span> All rights reserved.</div>
+            <div class="footer-links">
+                <a href="#about">Tentang</a>
+                <a href="#skills">Keahlian</a>
+                <a href="#projects">Proyek</a>
+                <a href="#contact">Kontak</a>
             </div>
         </div>
     </footer>
-    
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" class="fixed bottom-5 right-5 bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300 z-50">
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const preloader = document.getElementById('preloader');
-            const mainContent = document.querySelector('main');
-
-            // --- Preloader Logic ---
-            window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', function() {
+        // === Preloader ===
+        const preloader = document.getElementById('preloader');
+        const mainContent = document.getElementById('mainContent');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
                 preloader.style.opacity = '0';
                 preloader.style.visibility = 'hidden';
-                mainContent.style.transition = 'opacity 0.5s';
+                mainContent.style.transition = 'opacity 0.6s ease';
                 mainContent.style.opacity = '1';
+            }, 300);
+        });
+
+        // === Theme Toggle ===
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                themeIcon.className = 'fas fa-sun';
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.className = 'fas fa-moon';
+            }
+        };
+        themeToggle.addEventListener('click', () => {
+            const next = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+            localStorage.setItem('theme', next);
+            applyTheme(next);
+        });
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        applyTheme(savedTheme);
+
+        // === Year ===
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // === Custom Cursor ===
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX; mouseY = e.clientY;
+            dot.style.left = mouseX - 4 + 'px';
+            dot.style.top = mouseY - 4 + 'px';
+        });
+        function animateRing() {
+            ringX += (mouseX - ringX) * 0.15;
+            ringY += (mouseY - ringY) * 0.15;
+            ring.style.left = ringX - 20 + 'px';
+            ring.style.top = ringY - 20 + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+        document.querySelectorAll('a, button, .filter-btn').forEach(el => {
+            el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+            el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
+        });
+
+        // === Mobile Menu ===
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileClose = document.getElementById('mobileClose');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+        mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+        });
+
+        // === Navbar Scroll ===
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // === Active Nav Link (Scroll Spy) ===
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const top = section.offsetTop - 200;
+                if (window.scrollY >= top) current = section.getAttribute('id');
             });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.dataset.section === current);
+            });
+        });
 
-            // --- Theme Toggle Logic ---
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const lightIcon = document.getElementById('theme-toggle-light-icon');
-            const darkIcon = document.getElementById('theme-toggle-dark-icon');
-            
-            const applyTheme = (theme) => {
-                if (theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                    lightIcon.classList.add('hidden');
-                    darkIcon.classList.remove('hidden');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                    lightIcon.classList.remove('hidden');
-                    darkIcon.classList.add('hidden');
-                }
-                initParticles(theme);
-            };
+        // === Typewriter ===
+        const words = ['Software Engineer', 'Full Stack Developer', 'IoT Specialist', 'ML Developer', 'Educator'];
+        let wordIndex = 0, charIndex = 0, isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter');
+        function typeWrite() {
+            const word = words[wordIndex];
+            if (isDeleting) {
+                typewriterEl.textContent = word.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typewriterEl.textContent = word.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            let speed = isDeleting ? 40 : 80;
+            if (!isDeleting && charIndex === word.length) {
+                speed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                speed = 500;
+            }
+            setTimeout(typeWrite, speed);
+        }
+        typeWrite();
 
-            const toggleTheme = () => {
-                const currentTheme = localStorage.getItem('theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                localStorage.setItem('theme', newTheme);
-                applyTheme(newTheme);
-            };
+        // === Scroll Reveal ===
+        function revealOnScroll() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 80) el.classList.add('active');
+            });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
 
-            themeToggleBtn.addEventListener('click', toggleTheme);
+        // === Scroll to Top ===
+        const scrollTop = document.getElementById('scrollTop');
+        window.addEventListener('scroll', () => {
+            scrollTop.classList.toggle('visible', window.scrollY > 400);
+        });
+        scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            const userTheme = localStorage.getItem('theme');
-            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            applyTheme(userTheme || (systemTheme ? 'dark' : 'light'));
+        // === Projects ===
+        const projectsData = [
+            { imageUrl: "images/angkot-bandung.jpg", title: "Angkot Bandung: Pantau Posisi Angkot", description: "Aplikasi web untuk memantau posisi angkot di Kota Bandung secara real-time berdasarkan pilihan trayek.", category: "iot" },
+            { imageUrl: "images/gayo.png", title: "Drilling Monitoring", description: "Monitoring Laporan Drilling untuk PT. Gayo Mineral Resources.", category: "web" },
+            { imageUrl: "images/job-management.png", title: "Job Management", description: "Monitoring Laporan Pekerjaan untuk PT. Antam dan Logam Mulia.", category: "web" },
+            { imageUrl: "images/iot-monitoring.png", title: "IoT Monitoring", description: "Monitoring Mesin Produksi untuk PT. Antam ubpp Logam Mulia.", category: "iot" },
+            { imageUrl: "images/ambulance-bandung.jpg", title: "Ambulans Kota Bandung", description: "Aplikasi berbasis web untuk memantau dan melacak posisi semua unit ambulans di Kota Bandung secara live pada peta.", category: "iot" },
+            { imageUrl: "images/apotek.png", title: "Inventory Apotek", description: "Sistem Informasi Pencatatan dan Penjualan Obat untuk Apotek.", category: "web" },
+            { imageUrl: "images/haji.png", title: "Manasik Tracking", description: "Sistem Informasi Tracking Jamaah Haji untuk PT. LSKK.", category: "mobile" },
+            { imageUrl: "images/georima.png", title: "GeoRIMA 1.5", description: "Visualisasi Data Sumber Daya Alam untuk PPSDM.", category: "web" },
+            { imageUrl: "images/kawal-desa.png", title: "Kawal Desa", description: "Platform tatakelola desa serta interaksi antara warga dan aparat desa.", category: "web" },
+            { imageUrl: "images/ai-camera.jpg", title: "Deteksi Kendaraan dengan Kamera AI", description: "Platform AI (YOLOv8) untuk mendeteksi dan menganalisis objek kendaraan secara real-time dari rekaman kamera.", category: "ai" },
+            { imageUrl: "images/face-recognition-dashboard.jpg", title: "Dashboard Pengenalan Wajah", description: "Aplikasi web interaktif untuk melatih dan menguji model AI dalam melakukan pengenalan wajah secara real-time.", category: "ai" },
+            { imageUrl: "images/ai-hylab.jpg", title: "HYLAB: Smart Classroom AI", description: "Dasbor pemantauan terpusat menggunakan AI untuk menganalisis aktivitas dan kondisi emosional siswa di kelas.", category: "ai" },
+            { imageUrl: "images/face-detection.jpg", title: "Deteksi Manusia dan Emosi", description: "Sistem AI yang mendeteksi keberadaan orang dan menganalisis ekspresi emosi mereka secara real-time.", category: "ai" },
+            { imageUrl: "images/ops-engine.png", title: "Ops Engine: Monitoring Mesin Industri", description: "Solusi manajemen operasional dengan dasbor web dan aplikasi mobile untuk pelacakan status mesin dan pelaporan inspeksi.", category: "mobile" },
+            { imageUrl: "images/status-iot.jpg", title: "Dasbor Status Perangkat IoT", description: "Dasbor untuk memantau status dan lokasi perangkat IoT di seluruh Indonesia melalui visualisasi peta interaktif.", category: "iot" },
+            { imageUrl: "images/bell-iot.png", title: "Sistem Notifikasi Bel & CCTV", description: "Integrasi bel pintu dengan kamera CCTV yang mengirimkan notifikasi dan tangkapan gambar secara otomatis.", category: "iot" },
+            { imageUrl: "images/gps-tracker.jpg", title: "Platform Monitoring Armada", description: "Aplikasi web untuk melacak dan memvisualisasikan lokasi kendaraan secara real-time pada peta interaktif.", category: "iot" },
+            { imageUrl: "images/ai-traffic-monitoring.jpg", title: "Pemantauan Lalu Lintas AI", description: "Sistem pemantauan lalu lintas menggunakan AI untuk menganalisis kondisi lalu lintas secara real-time.", category: "ai" }
+        ];
 
-            // Set current year in footer
-            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const projectsGrid = document.getElementById('projectsGrid');
+        let currentFilter = 'all';
 
-            // --- Projects Data (Embedded) ---
-            const projectsData = [
-                {
-                    "imageUrl": "images/angkot-bandung.jpg",
-                    "title": "Angkot Bandung: Pantau Posisi Angkot",
-                    "description": "Aplikasi web untuk memantau posisi angkot di Kota Bandung secara real-time berdasarkan pilihan trayek, untuk memudahkan perencanaan perjalanan."
-                },
-                {
-                    "imageUrl": "images/gayo.png",
-                    "title": "Drilling Monitoring",
-                    "description": "Monitoring Laporan Drilling untuk PT. Gayo Mineral Resources."
-                },
-                {
-                    "imageUrl": "images/job-management.png",
-                    "title": "Job Management",
-                    "description": "Monitoring Laporan Pekerjaan untuk PT. Antam dan Logam Mulia."
-                },
-                {
-                    "imageUrl": "images/iot-monitoring.png",
-                    "title": "IoT Monitoring",
-                    "description": "Monitoring Mesin Produksi untuk PT. Antam ubpp Logam Mulia."
-                },
-                {
-                    "imageUrl": "images/ambulance-bandung.jpg",
-                    "title": "Ambulans Kota Bandung: Sistem Pemantauan Posisi",
-                    "description": "Aplikasi berbasis web untuk memantau dan melacak posisi semua unit ambulans di Kota Bandung secara live pada peta, guna mempercepat waktu respons dalam kondisi darurat."
-                },
-                {
-                    "imageUrl": "images/apotek.png",
-                    "title": "Inventory Apotek",
-                    "description": "Sistem Informasi Pencatatan dan Penjualan Obat untuk Apotek."
-                },
-                {
-                    "imageUrl": "images/haji.png",
-                    "title": "Manasik Tracking",
-                    "description": "Sistem Informasi Tracking Jamaah Haji untuk PT. LSKK."
-                },
-                {
-                    "imageUrl": "images/georima.png",
-                    "title": "GeoRIMA 1.5",
-                    "description": "Visualisasi Data Sumber Daya Alam untuk PPSDM."
-                },
-                {
-                    "imageUrl": "images/kawal-desa.png",
-                    "title": "Kawal Desa",
-                    "description": "Aplikasi/platform yang dipergunakan untuk kebutuhan tatakelola di desa maupun interaksi antara warga dan aparat desa."
-                },
-                {
-                    "imageUrl": "images/ai-camera.jpg",
-                    "title": "Deteksi Kendaraan dengan Kamera AI",
-                    "description": "Platform cerdas yang memanfaatkan model AI (YOLOv8) untuk mendeteksi dan menganalisis objek kendaraan secara real-time dari rekaman kamera. Sistem ini mampu memberikan laporan detil, termasuk tingkat kepercayaan deteksi dan koordinat objek, untuk meningkatkan keamanan dan efisiensi pemantauan area."
-                },
-                {
-                    "imageUrl": "images/face-recognition-dashboard.jpg",
-                    "title": "Dashboard Training & Uji Coba Model Pengenalan Wajah",
-                    "description": "Membangun aplikasi web interaktif untuk melatih dan menguji model AI dalam melakukan pengenalan wajah secara real-time langsung dari kamera"
-                },
-                {
-                    "imageUrl": "images/ai-hylab.jpg",
-                    "title": "HYLAB: Smart Classroom AI Monitoring",
-                    "description": "Sebuah dasbor pemantauan terpusat yang menggunakan AI untuk menganalisis aktivitas, jumlah, dan kondisi emosional siswa (seperti lelah atau sedih) di dalam kelas secara real-time dari berbagai sudut kamera"
-                },
-                {
-                    "imageUrl": "images/face-detection.jpg",
-                    "title": "Visi Komputer untuk Deteksi Manusia dan Emosi",
-                    "description": "Mengembangkan sistem AI canggih yang tidak hanya mampu mendeteksi keberadaan orang dalam suatu area, tetapi juga dapat menganalisis dan mengenali ekspresi emosi mereka secara real-time."
-                },
-                {
-                    "imageUrl": "images/ops-engine.png",
-                    "title": "Platform Monitoring & Pelaporan Mesin Industri",
-                    "description": "Mengembangkan Ops Engine, sebuah solusi manajemen operasional lengkap yang terdiri dari dasbor web untuk pemantauan menyeluruh dan aplikasi mobile untuk teknisi di lapangan. Sistem ini memungkinkan pelacakan status mesin, manajemen tugas, dan pelaporan inspeksi secara digital untuk meningkatkan efisiensi dan mengurangi waktu henti (downtime) mesin."
-                },
-                {
-                    "imageUrl": "images/status-iot.jpg",
-                    "title": "Dasbor Status Perangkat IoT",
-                    "description": "Mengembangkan dasbor berbasis web untuk memantau status dan lokasi perangkat IoT yang tersebar di seluruh Indonesia secara real-time melalui visualisasi peta interaktif."
-                },
-                {
-                    "imageUrl": "images/bell-iot.png",
-                    "title": "Sistem Notifikasi Bel & Monitoring CCTV",
-                    "description": "Mengintegrasikan bel pintu dengan kamera CCTV yang secara otomatis mengirimkan notifikasi dan tangkapan gambar ke perangkat mobile dan web saat ada pengunjung."
-                },
-                {
-                    "imageUrl": "images/gps-tracker.jpg",
-                    "title": "Platform Monitoring Armada Kendaraan",
-                    "description": "Aplikasi web untuk melacak dan memvisualisasikan lokasi kendaraan secara real-time pada peta interaktif, lengkap dengan informasi detail seperti kecepatan dan waktu"
-                },
-                {
-                    "imageUrl": "images/ai-traffic-monitoring.jpg",
-                    "title": "Pemantauan Lalu Lintas dengan AI",
-                    "description": "Membangun sistem pemantauan lalu lintas yang menggunakan AI untuk mendeteksi dan menganalisis kondisi lalu lintas secara real-time dari rekaman kamera."
-                }
-            ];
+        function renderProjects(filter) {
+            projectsGrid.innerHTML = '';
+            const filtered = filter === 'all' ? projectsData : projectsData.filter(p => p.category === filter);
 
-            // --- Function to load and render projects ---
-            function loadProjects() {
-                const projectsGrid = document.getElementById('projects-grid');
-                // Show modern skeleton loaders
-                projectsGrid.innerHTML = Array(6).fill('').map(() => `
-                    <div class="skeleton-card animate-pulse">
-                        <div class="skeleton-img"></div>
-                        <div class="p-6 space-y-3">
-                            <div class="skeleton-text w-3/4 h-6"></div>
-                            <div class="skeleton-text w-full"></div>
-                            <div class="skeleton-text w-5/6"></div>
-                            <div class="flex gap-2 mt-4">
-                                <div class="skeleton-text w-16 h-6"></div>
-                                <div class="skeleton-text w-20 h-6"></div>
-                            </div>
+            filtered.forEach((project, i) => {
+                const card = document.createElement('div');
+                card.className = 'project-card reveal';
+                card.style.transitionDelay = (i % 3) * 0.1 + 's';
+
+                const categoryLabels = { web: 'Web App', iot: 'IoT', ai: 'AI / ML', mobile: 'Mobile' };
+
+                card.innerHTML = `
+                    <div class="project-image-wrapper">
+                        <img src="${project.imageUrl}" alt="${project.title}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x400/6366f1/ffffff?text=Project';">
+                        <div class="project-overlay">
+                            <span class="project-overlay-badge">${categoryLabels[project.category] || 'Project'}</span>
                         </div>
                     </div>
-                `).join('');
-
-                // Simulate loading delay for smooth UX
-                setTimeout(() => {
-                    try {
-                        projectsGrid.innerHTML = ''; // Clear skeletons
-
-                        projectsData.forEach(project => {
-                            const card = document.createElement('div');
-                            card.className = 'project-card reveal';
-                            
-                            const tagsHtml = (project.tags || []).map(tag => 
-                                `<span class="tech-badge">${tag}</span>`
-                            ).join('');
-
-                            const linksHtml = `
-                                <div class="mt-auto pt-4 flex items-center gap-3">
-                                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 transition-colors font-medium flex items-center gap-1.5 text-sm"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
-                                    ${project.sourceUrl ? `<a href="${project.sourceUrl}" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 transition-colors font-medium flex items-center gap-1.5 text-sm"><i class="fab fa-github"></i> Source</a>` : ''}
-                                </div>
-                            `;
-
-                            card.innerHTML = `
-                                <div class="relative overflow-hidden">
-                                    <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-56 object-cover transition-transform duration-500" onerror="this.onerror=null;this.src='https://placehold.co/600x400/667eea/ffffff?text=Project+Image';">
-                                </div>
-                                <div class="p-6 flex flex-col flex-grow">
-                                    <h3 class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-3">${project.title}</h3>
-                                    <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow leading-relaxed">${project.description}</p>
-                                    ${tagsHtml ? `<div class="flex flex-wrap gap-2 mb-4">${tagsHtml}</div>` : ''}
-                                    ${linksHtml}
-                                </div>
-                            `;
-                            projectsGrid.appendChild(card);
-                        });
-                        revealOnScroll();
-                    } catch (error) {
-                        console.error("Gagal memuat data proyek:", error);
-                        projectsGrid.innerHTML = '<div class="col-span-full text-center py-12"><div class="inline-block bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl px-8 py-6"><i class="fas fa-exclamation-circle text-red-500 text-3xl mb-3"></i><p class="text-red-600 dark:text-red-400 font-medium">Gagal memuat data proyek.</p></div></div>';
-                    }
-                }, 800);
-            }
-
-            loadProjects();
-
-            // --- Mobile menu toggle ---
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+                    <div class="project-body">
+                        <h3 class="project-title">${project.title}</h3>
+                        <p class="project-desc">${project.description}</p>
+                    </div>
+                `;
+                projectsGrid.appendChild(card);
             });
 
-            // --- Navbar background change on scroll ---
-            const navbar = document.getElementById('navbar');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('bg-slate-900/95', 'shadow-lg');
-                    navbar.classList.remove('bg-slate-900/80');
-                } else {
-                    navbar.classList.remove('bg-slate-900/95', 'shadow-lg');
-                    navbar.classList.add('bg-slate-900/80');
-                }
-            });
+            setTimeout(revealOnScroll, 50);
+        }
 
-            // --- Scroll reveal animation ---
-            function revealOnScroll() {
-                const reveals = document.querySelectorAll('.reveal');
-                for (let i = 0; i < reveals.length; i++) {
-                    const windowHeight = window.innerHeight;
-                    const elementTop = reveals[i].getBoundingClientRect().top;
-                    const elementVisible = 100;
+        renderProjects('all');
 
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveals[i].classList.add('active');
-                    }
-                }
-            }
-            window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll();
-
-            // --- Scroll to top button ---
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollTopBtn.classList.remove('opacity-0', 'invisible');
-                } else {
-                    scrollTopBtn.classList.add('opacity-0', 'invisible');
-                }
+        // Filter buttons
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                currentFilter = btn.dataset.filter;
+                renderProjects(currentFilter);
             });
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // --- Particles.js Initialization ---
-            function initParticles(theme) {
-                const particleColor = theme === 'dark' ? '#38bdf8' : '#3b82f6';
-                const lineColor = theme === 'dark' ? '#1e293b' : '#e2e8f0';
-                
-                particlesJS('particles-js', {
-                    "particles": {
-                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                        "color": { "value": particleColor },
-                        "shape": { "type": "circle" },
-                        "opacity": { "value": 0.5, "random": false },
-                        "size": { "value": 3, "random": true },
-                        "line_linked": { "enable": true, "distance": 150, "color": lineColor, "opacity": 0.4, "width": 1 },
-                        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-                    },
-                    "interactivity": {
-                        "detect_on": "canvas",
-                        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-                    },
-                    "retina_detect": true
-                });
-            }
         });
+    });
     </script>
 
 </body>
