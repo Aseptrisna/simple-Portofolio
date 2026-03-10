@@ -1182,6 +1182,118 @@
             transform: translateX(3px);
         }
 
+        /* --- Publications Section --- */
+        .pub-stats {
+            display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 2.5rem;
+        }
+        .pub-stat-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem 2.5rem;
+            text-align: center;
+            min-width: 140px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pub-stat-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(99,102,241,0.06), transparent);
+            pointer-events: none;
+        }
+        .pub-stat-number {
+            font-size: 2rem; font-weight: 800;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .pub-stat-label {
+            font-size: 0.8rem; color: var(--text-secondary);
+            margin-top: 0.3rem; text-transform: uppercase;
+            letter-spacing: 0.5px; font-weight: 500;
+        }
+        .pub-list {
+            display: flex; flex-direction: column; gap: 1rem;
+            max-width: 900px; margin: 0 auto;
+        }
+        .pub-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.5rem 1.8rem;
+            position: relative; overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .pub-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.1);
+        }
+        .pub-item::before {
+            content: '';
+            position: absolute; left: 0; top: 0; bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
+            border-radius: 0 3px 3px 0;
+        }
+        .pub-title {
+            font-size: 1rem; font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.5; margin-bottom: 0.6rem;
+        }
+        .pub-title a {
+            color: inherit; text-decoration: none;
+            transition: color 0.2s;
+        }
+        .pub-title a:hover { color: var(--accent); }
+        .pub-meta {
+            display: flex; flex-wrap: wrap; gap: 0.8rem;
+            align-items: center; font-size: 0.82rem;
+            color: var(--text-secondary);
+        }
+        .pub-venue {
+            font-style: italic; color: var(--text-secondary);
+        }
+        .pub-year {
+            background: rgba(99,102,241,0.1);
+            color: var(--accent);
+            padding: 2px 10px; border-radius: 20px;
+            font-weight: 600; font-size: 0.75rem;
+        }
+        .pub-citations {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-weight: 500;
+        }
+        .pub-citations i { font-size: 0.7rem; }
+        .pub-doi a {
+            color: var(--accent); text-decoration: none;
+            font-size: 0.78rem; font-weight: 500;
+        }
+        .pub-doi a:hover { text-decoration: underline; }
+        .pub-scholar-link {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            margin-top: 2rem;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: #fff; text-decoration: none;
+            border-radius: 50px; font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .pub-scholar-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99,102,241,0.35);
+        }
+        .pub-scholar-link i { font-size: 1rem; }
+        @media(max-width:768px) {
+            .pub-stat-card { padding: 1rem 1.5rem; min-width: 100px; }
+            .pub-stat-number { font-size: 1.5rem; }
+            .pub-item { padding: 1.2rem 1.3rem; }
+        }
+
         /* ============================================
            PREMIUM UI UPGRADES
            ============================================ */
@@ -1419,6 +1531,7 @@
                 <a href="#skills" data-section="skills">Keahlian</a>
                 <a href="#projects" data-section="projects">Proyek</a>
                 <a href="#products" data-section="products">Produk</a>
+                <a href="#publications" data-section="publications">Publikasi</a>
                 <a href="#contact" class="nav-cta">Hubungi</a>
             </nav>
             <div class="nav-right">
@@ -1439,6 +1552,7 @@
         <a href="#skills" class="mobile-link">Keahlian</a>
         <a href="#projects" class="mobile-link">Proyek</a>
         <a href="#products" class="mobile-link">Produk</a>
+        <a href="#publications" class="mobile-link">Publikasi</a>
         <a href="#contact" class="mobile-link">Hubungi</a>
     </div>
 
@@ -1970,6 +2084,122 @@
             </div>
         </section>
 
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="section-container">
+                <div class="section-header reveal">
+                    <div class="section-label">Publikasi Ilmiah</div>
+                    <h2 class="section-title">Publikasi & Riset</h2>
+                    <p class="section-desc">Kontribusi ilmiah di jurnal dan konferensi internasional</p>
+                </div>
+
+                <div class="pub-stats reveal">
+                    <div class="pub-stat-card">
+                        <div class="pub-stat-number">10</div>
+                        <div class="pub-stat-label">Publikasi</div>
+                    </div>
+                    <div class="pub-stat-card">
+                        <div class="pub-stat-number">3</div>
+                        <div class="pub-stat-label">Sitasi</div>
+                    </div>
+                    <div class="pub-stat-card">
+                        <div class="pub-stat-number">6</div>
+                        <div class="pub-stat-label">Jurnal & Konferensi</div>
+                    </div>
+                </div>
+
+                <div class="pub-list">
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.1109/ICoDSE68111.2025.11351787" target="_blank" rel="noopener noreferrer">YOLOv8 Implementation on ESP32-CAM for IoT-Based Human and Vehicle Detection</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">International Conference on Data and Software Engineering (ICoDSE)</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.18421/tem142-60" target="_blank" rel="noopener noreferrer">An Innovative Learning Approach for Enhancing Basic Programming Skills Through Virtual Lab</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">TEM Journal</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.20961/jeeict.7.2.108430" target="_blank" rel="noopener noreferrer">Scalable Microservices Architecture for Face Recognition-Based Employee Attendance Systems</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">Journal of Electrical, Electronic, Information, and Communication Technology (JEEICT)</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.36448/expert.v15i2.4658" target="_blank" rel="noopener noreferrer">Face Recognition dengan YOLO 8 dan Convolutional Neural Network (CNN)</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">EXPERT: Jurnal Manajemen Sistem Informasi dan Teknologi</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.36448/expert.v15i2.4438" target="_blank" rel="noopener noreferrer">Implementasi Metode Websocket Pada Aplikasi Donor Darah Real Time GPS Tracking</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">EXPERT: Jurnal Manajemen Sistem Informasi dan Teknologi</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.33364/algoritma/v.22-1.2261" target="_blank" rel="noopener noreferrer">Augmented Reality Menggunakan Marker Based Tracking Untuk Informasi Sejarah Kain Tapis Lampung</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2025</span>
+                            <span class="pub-venue">Jurnal Algoritma</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.1109/TSSA63730.2024.10864050" target="_blank" rel="noopener noreferrer">Performance Analysis of Real-Time Safety Vest and Helmet Detection Using YOLOv8</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2024</span>
+                            <span class="pub-venue">International Conference on Telecommunication Systems, Services, and Applications (TSSA)</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.1109/TSSA63730.2024.10864365" target="_blank" rel="noopener noreferrer">Implementing Microservice Architecture for An Elevator Monitoring System to Improve Scalability and Flexibility</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2024</span>
+                            <span class="pub-venue">International Conference on Telecommunication Systems, Services, and Applications (TSSA)</span>
+                            <span class="pub-citations"><i class="fas fa-quote-right"></i> 2 sitasi</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.33364/algoritma/v.21-1.1525" target="_blank" rel="noopener noreferrer">Pengembangan Desain Aplikasi Daily Report dengan Pendekatan User Centered Design</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2024</span>
+                            <span class="pub-venue">Jurnal Algoritma</span>
+                        </div>
+                    </div>
+
+                    <div class="pub-item reveal">
+                        <div class="pub-title"><a href="https://doi.org/10.1109/ICSET57543.2022.10011129" target="_blank" rel="noopener noreferrer">Design and Development of a Daily Recording System for Vocational High School Field Work Practice Participants</a></div>
+                        <div class="pub-meta">
+                            <span class="pub-year">2022</span>
+                            <span class="pub-venue">International Conference on System Engineering and Technology (ICSET)</span>
+                            <span class="pub-citations"><i class="fas fa-quote-right"></i> 1 sitasi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center" class="reveal">
+                    <a href="https://scholar.google.com/citations?user=YrklzvkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="pub-scholar-link">
+                        <i class="fas fa-graduation-cap"></i> Lihat di Google Scholar
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="section-container">
@@ -2036,6 +2266,7 @@
                 <a href="#skills">Keahlian</a>
                 <a href="#projects">Proyek</a>
                 <a href="#products">Produk</a>
+                <a href="#publications">Publikasi</a>
                 <a href="#contact">Kontak</a>
             </div>
         </div>
