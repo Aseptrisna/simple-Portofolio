@@ -1057,6 +1057,131 @@
             transform: translateY(-2px);
         }
 
+        /* --- Landing Page Showcase --- */
+        .landing-header {
+            text-align: center;
+            margin-top: 5rem;
+            margin-bottom: 2.5rem;
+        }
+        .landing-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .landing-header p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        .landing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        @media (max-width: 400px) {
+            .landing-grid { grid-template-columns: 1fr; }
+        }
+        .landing-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            transition: all var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+        .landing-card:hover {
+            border-color: transparent;
+            box-shadow: 0 0 0 1px rgba(99,102,241,0.1), var(--shadow-xl);
+            transform: translateY(-8px);
+        }
+        .landing-card::after {
+            content: '';
+            position: absolute; inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient(from var(--gradient-angle, 0deg), #6366f1, #a855f7, #ec4899, #06b6d4, #6366f1);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: gradient-rotate 3s linear infinite;
+        }
+        .landing-card:hover::after { opacity: 1; }
+        .landing-preview {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+            background: var(--bg-secondary);
+        }
+        .landing-preview iframe {
+            width: 200%;
+            height: 200%;
+            border: none;
+            transform: scale(0.5);
+            transform-origin: top left;
+            pointer-events: none;
+        }
+        .landing-preview-overlay {
+            position: absolute;
+            inset: 0;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .landing-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .landing-type {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        .landing-type i { font-size: 0.6rem; }
+        .landing-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 0.375rem;
+        }
+        .landing-desc {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1rem;
+        }
+        .landing-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.875rem;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+        .landing-link:hover {
+            color: var(--accent-dark);
+            gap: 0.75rem;
+        }
+        .landing-link i {
+            transition: transform var(--transition);
+        }
+        .landing-link:hover i {
+            transform: translateX(3px);
+        }
+
         /* ============================================
            PREMIUM UI UPGRADES
            ============================================ */
@@ -1784,6 +1909,62 @@
                         <a href="https://orixa.sta.my.id" target="_blank" rel="noopener noreferrer" class="product-link">
                             <i class="fas fa-external-link-alt"></i> Kunjungi ORIXA
                         </a>
+                    </div>
+                </div>
+
+                <!-- Landing Page Showcase -->
+                <div class="landing-header reveal">
+                    <h3>🌐 Landing Page yang Pernah Dibuat</h3>
+                    <p>Website klien yang dirancang dan dikembangkan untuk berbagai kebutuhan bisnis</p>
+                </div>
+
+                <div class="landing-grid">
+                    <!-- Bekam Andi -->
+                    <div class="landing-card reveal">
+                        <div class="landing-preview">
+                            <iframe src="https://bekam-andi.sta.my.id" loading="lazy" title="Bekam Andi"></iframe>
+                            <a href="https://bekam-andi.sta.my.id" target="_blank" rel="noopener noreferrer" class="landing-preview-overlay"></a>
+                        </div>
+                        <div class="landing-body">
+                            <div class="landing-type"><i class="fas fa-heartbeat"></i> Kesehatan & Terapi</div>
+                            <div class="landing-name">Andi Bekam Bandung</div>
+                            <p class="landing-desc">Landing page layanan terapi Bekam, Refleksi, Akupunktur, dan Ruqyah profesional di Kota Bandung dengan dua cabang di Cijawura dan Kiaracondong.</p>
+                            <a href="https://bekam-andi.sta.my.id" target="_blank" rel="noopener noreferrer" class="landing-link">
+                                Kunjungi Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Carisco Variasi -->
+                    <div class="landing-card reveal reveal-delay-1">
+                        <div class="landing-preview">
+                            <iframe src="https://carisco-variasi.sta.my.id" loading="lazy" title="Carisco Variasi"></iframe>
+                            <a href="https://carisco-variasi.sta.my.id" target="_blank" rel="noopener noreferrer" class="landing-preview-overlay"></a>
+                        </div>
+                        <div class="landing-body">
+                            <div class="landing-type"><i class="fas fa-car"></i> Otomotif & Variasi</div>
+                            <div class="landing-name">Carisco Variasi</div>
+                            <p class="landing-desc">Website bengkel variasi mobil terpercaya di Bandar Lampung. Spesialis Kaca Film, Car Audio, Sarung Jok, dan Aksesoris dengan teknisi berpengalaman 10+ tahun.</p>
+                            <a href="https://carisco-variasi.sta.my.id" target="_blank" rel="noopener noreferrer" class="landing-link">
+                                Kunjungi Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Logic Frame Indonesia -->
+                    <div class="landing-card reveal reveal-delay-2">
+                        <div class="landing-preview">
+                            <iframe src="https://logic-frame-indonesia.sta.my.id" loading="lazy" title="Logic Frame Indonesia"></iframe>
+                            <a href="https://logic-frame-indonesia.sta.my.id" target="_blank" rel="noopener noreferrer" class="landing-preview-overlay"></a>
+                        </div>
+                        <div class="landing-body">
+                            <div class="landing-type"><i class="fas fa-laptop-code"></i> Software House</div>
+                            <div class="landing-name">PT. Logic Frame Indonesia</div>
+                            <p class="landing-desc">Company profile perusahaan jasa pembuatan website dan aplikasi profesional. Menyediakan solusi teknologi untuk transformasi digital bisnis di Indonesia.</p>
+                            <a href="https://logic-frame-indonesia.sta.my.id" target="_blank" rel="noopener noreferrer" class="landing-link">
+                                Kunjungi Website <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
