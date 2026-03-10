@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Asep Trisna Setiawan - Software Engineer profesional dengan keahlian dalam pengembangan web modern, mobile apps, dan solusi teknologi. Portfolio project dan pengalaman kerja." />
-    <meta name="keywords" content="Software Engineer, Web Developer, Mobile Developer, Full Stack Developer, Portfolio, Asep Trisna Setiawan, Programmer Indonesia" />
+    <meta name="description" content="Asep Trisna Setiawan, S.Kom., M.T. - Machine Learning Engineer & Lead Software Developer dengan keahlian dalam AI, Backend System, IoT, dan Computer Vision. Portfolio project dan pengalaman kerja." />
+    <meta name="keywords" content="Machine Learning Engineer, Lead Software Developer, Backend Developer, IoT Specialist, AI, Computer Vision, Full Stack Developer, Portfolio, Asep Trisna Setiawan, Dosen, BPH Migas" />
     <meta name="author" content="Asep Trisna Setiawan" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="Indonesian" />
@@ -23,21 +23,21 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://aseptrisna.com/" />
-    <meta property="og:title" content="Asep Trisna Setiawan - Software Engineer Portfolio" />
-    <meta property="og:description" content="Software Engineer profesional dengan keahlian dalam pengembangan web modern dan mobile apps. Lihat portfolio dan project saya." />
+    <meta property="og:title" content="Asep Trisna Setiawan, S.Kom., M.T. - ML Engineer & Lead Software Developer" />
+    <meta property="og:description" content="Machine Learning Engineer & Lead Software Developer dengan keahlian dalam AI, Backend System, IoT, dan Computer Vision. Lihat portfolio dan project saya." />
     <meta property="og:image" content="https://aseptrisna.com/profile/profile.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://aseptrisna.com/" />
-    <meta name="twitter:title" content="Asep Trisna Setiawan - Software Engineer Portfolio" />
-    <meta name="twitter:description" content="Software Engineer profesional dengan keahlian dalam pengembangan web modern dan mobile apps." />
+    <meta name="twitter:title" content="Asep Trisna Setiawan, S.Kom., M.T. - ML Engineer & Lead Software Developer" />
+    <meta name="twitter:description" content="Machine Learning Engineer & Lead Software Developer dengan keahlian dalam AI, Backend System, IoT, dan Computer Vision." />
     <meta name="twitter:image" content="https://aseptrisna.com/profile/profile.jpg" />
 
     <meta name="theme-color" content="#0a0a0a" />
     <link rel="canonical" href="https://aseptrisna.com/" />
 
-    <title>Asep Trisna Setiawan - Software Engineer | Portfolio</title>
+    <title>Asep Trisna Setiawan, S.Kom., M.T. - ML Engineer & Lead Software Developer | Portfolio</title>
 
     <!-- Google Fonts: Inter + Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -884,6 +884,219 @@
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
+
+        /* ============================================
+           PREMIUM UI UPGRADES
+           ============================================ */
+
+        /* --- Noise Texture Overlay --- */
+        body::before {
+            content: '';
+            position: fixed; inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px 200px;
+        }
+        html.dark body::before { opacity: 0.04; }
+
+        /* --- Animated Gradient Border on Cards --- */
+        @property --gradient-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+        @keyframes gradient-rotate {
+            to { --gradient-angle: 360deg; }
+        }
+        .bento-card:hover,
+        .skill-card:hover,
+        .project-card:hover,
+        .contact-card:hover {
+            border-color: transparent;
+            background: var(--card);
+            background-clip: padding-box;
+        }
+        .bento-card::after,
+        .skill-card::after,
+        .project-card::after,
+        .contact-card::after {
+            content: '';
+            position: absolute; inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient(from var(--gradient-angle, 0deg), #6366f1, #a855f7, #ec4899, #06b6d4, #6366f1);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: gradient-rotate 3s linear infinite;
+        }
+        .bento-card:hover::after,
+        .skill-card:hover::after,
+        .project-card:hover::after,
+        .contact-card:hover::after {
+            opacity: 1;
+        }
+        .bento-card,
+        .skill-card,
+        .project-card,
+        .contact-card {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- Hero Animated Gradient Name --- */
+        .hero-title .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899, #06b6d4, #6366f1);
+            background-size: 300% 100%;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient-shift 4s ease-in-out infinite;
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* --- Hero Particle Canvas --- */
+        #heroParticles {
+            position: absolute; inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* --- Animated Stats Counter Styling --- */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        .stat-number.counting {
+            transition: none;
+        }
+
+        /* --- Glow Orbs (hero background) --- */
+        .hero-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0;
+            animation: orb-float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+        .hero-orb-1 {
+            width: 400px; height: 400px;
+            background: rgba(99, 102, 241, 0.15);
+            top: -10%; left: -5%;
+            animation-delay: 0s;
+        }
+        .hero-orb-2 {
+            width: 300px; height: 300px;
+            background: rgba(168, 85, 247, 0.12);
+            top: 50%; right: -8%;
+            animation-delay: -3s;
+        }
+        .hero-orb-3 {
+            width: 250px; height: 250px;
+            background: rgba(6, 182, 212, 0.1);
+            bottom: -5%; left: 30%;
+            animation-delay: -5s;
+        }
+        @keyframes orb-float {
+            0%, 100% { opacity: 0.4; transform: translate(0, 0) scale(1); }
+            33% { opacity: 0.7; transform: translate(30px, -20px) scale(1.05); }
+            66% { opacity: 0.5; transform: translate(-20px, 15px) scale(0.95); }
+        }
+        html.dark .hero-orb { opacity: 0; }
+        html.dark .hero-orb-1 { background: rgba(99, 102, 241, 0.2); }
+        html.dark .hero-orb-2 { background: rgba(168, 85, 247, 0.15); }
+        html.dark .hero-orb-3 { background: rgba(6, 182, 212, 0.12); }
+
+        /* --- CTA Box Gradient Border --- */
+        .cta-box {
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute; inset: -1px;
+            border-radius: inherit;
+            background: conic-gradient(from var(--gradient-angle, 0deg), #6366f1, #a855f7, #ec4899, #06b6d4, #6366f1);
+            z-index: -1;
+            opacity: 0.5;
+            animation: gradient-rotate 4s linear infinite;
+        }
+
+        /* --- Enhanced Scroll Top Button --- */
+        .scroll-top {
+            position: relative;
+            overflow: hidden;
+        }
+        .scroll-top::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        .scroll-top:hover::before {
+            transform: translateX(100%);
+        }
+
+        /* --- Smooth Section Divider --- */
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0.3;
+        }
+
+        /* --- Footer Gradient Top Border --- */
+        .footer {
+            position: relative;
+        }
+        .footer::before {
+            content: '';
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient-1);
+            opacity: 0.5;
+        }
+
+        /* --- Enhanced Profile Image --- */
+        .profile-img {
+            transition: all var(--transition);
+        }
+        .bento-card:hover .profile-img {
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* --- Hero Image Ring Animation --- */
+        .hero-image {
+            position: relative;
+        }
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 400px; height: 400px;
+            border-radius: var(--radius-xl);
+            border: 2px dashed rgba(99, 102, 241, 0.2);
+            animation: spin-slow 20s linear infinite;
+            z-index: -1;
+        }
+        @keyframes spin-slow { to { transform: rotate(360deg); } }
+        @media (max-width: 968px) {
+            .hero-image-wrapper::before { width: 270px; height: 270px; }
+        }
+
+        /* --- Nav Logo Hover Effect --- */
+        .nav-logo {
+            transition: all var(--transition);
+        }
+        .nav-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
     </style>
 </head>
 <body>
@@ -937,6 +1150,10 @@
         <section class="hero" id="hero">
             <div class="hero-mesh"></div>
             <div class="hero-grid-bg"></div>
+            <div class="hero-orb hero-orb-1"></div>
+            <div class="hero-orb hero-orb-2"></div>
+            <div class="hero-orb hero-orb-3"></div>
+            <canvas id="heroParticles"></canvas>
             <div class="hero-container">
                 <div class="hero-left">
                     <div class="hero-badge reveal">
@@ -948,7 +1165,7 @@
                         <span class="gradient-text">Asep Trisna S.</span>
                     </h1>
                     <p class="hero-desc reveal reveal-delay-2">
-                        Seorang <strong><span class="hero-typewriter" id="typewriter"></span></strong> yang passionate menciptakan solusi teknologi inovatif untuk Web, Mobile, dan IoT.
+                        Seorang <strong><span class="hero-typewriter" id="typewriter"></span></strong> yang berpengalaman dalam Machine Learning, Computer Vision, Backend System, dan IoT untuk kebutuhan industri dan pemerintahan.
                     </p>
                     <div class="hero-buttons reveal reveal-delay-3">
                         <a href="#projects" class="btn btn-primary">
@@ -969,13 +1186,13 @@
                         <div class="hero-image-glow"></div>
                         <img src="profile/photo.jpg" alt="Asep Trisna Setiawan" class="hero-image" onerror="this.onerror=null;this.src='https://placehold.co/400x400/6366f1/ffffff?text=ATS';">
                         <div class="float-badge" style="top:5%; left:-15%;">
-                            <i class="fas fa-code" style="color:#6366f1;"></i> Full Stack
+                            <i class="fas fa-brain" style="color:#6366f1;"></i> ML Engineer
                         </div>
                         <div class="float-badge">
-                            <i class="fas fa-microchip" style="color:#06b6d4;"></i> IoT Expert
+                            <i class="fas fa-server" style="color:#06b6d4;"></i> Backend Dev
                         </div>
                         <div class="float-badge">
-                            <i class="fas fa-brain" style="color:#a855f7;"></i> AI / ML
+                            <i class="fas fa-microchip" style="color:#a855f7;"></i> IoT Specialist
                         </div>
                     </div>
                 </div>
@@ -1001,6 +1218,7 @@
                 <div class="marquee-item"><span>&#9679;</span> Figma</div>
                 <div class="marquee-item"><span>&#9679;</span> TensorFlow</div>
                 <div class="marquee-item"><span>&#9679;</span> YOLOv8</div>
+                <div class="marquee-item"><span>&#9679;</span> FastAPI</div>
                 <!-- Duplicate for seamless loop -->
                 <div class="marquee-item"><span>&#9679;</span> React.js</div>
                 <div class="marquee-item"><span>&#9679;</span> Node.js</div>
@@ -1018,6 +1236,7 @@
                 <div class="marquee-item"><span>&#9679;</span> Figma</div>
                 <div class="marquee-item"><span>&#9679;</span> TensorFlow</div>
                 <div class="marquee-item"><span>&#9679;</span> YOLOv8</div>
+                <div class="marquee-item"><span>&#9679;</span> FastAPI</div>
             </div>
         </div>
 
@@ -1036,10 +1255,10 @@
                         <div class="profile-card">
                             <img src="profile/photo.jpg" alt="Asep Trisna Setiawan" class="profile-img" onerror="this.onerror=null;this.src='https://placehold.co/150x150/6366f1/ffffff?text=ATS';">
                             <div>
-                                <h3 class="profile-name">Asep Trisna Setiawan</h3>
-                                <p class="profile-role">Software Engineer & Educator</p>
+                                <h3 class="profile-name">Asep Trisna Setiawan, S.Kom., M.T.</h3>
+                                <p class="profile-role">Machine Learning Engineer & Lead Software Developer</p>
                                 <p class="profile-desc">
-                                    Software engineer dengan keahlian dalam IoT, pengembangan backend, web, dan aplikasi mobile. Berdedikasi untuk memecahkan masalah yang kompleks dan mendorong inovasi melalui teknologi.
+                                    Machine Learning Engineer dan Lead Software Developer dengan pengalaman lebih dari tiga tahun dalam pengembangan sistem perangkat lunak, kecerdasan buatan, dan analitik data. Memiliki keahlian dalam merancang solusi berbasis Machine Learning, Computer Vision, Backend System, dan IoT untuk berbagai kebutuhan industri dan pemerintahan. Aktif sebagai Dosen Fakultas Ilmu Komputer di Universitas Bandar Lampung dan sedang menempuh pendidikan Doktor (S3) di bidang Teknik Elektro dan Informatika di ITB.
                                 </p>
                                 <a href="resume/CV-Asep-Trisna-Setiawan.pdf" download class="cv-btn">
                                     <i class="fas fa-download"></i> Unduh CV Saya
@@ -1052,7 +1271,7 @@
                     <div class="bento-card span-4 reveal reveal-delay-1" style="display:flex; align-items:center;">
                         <div class="stat-grid" style="width:100%;">
                             <div class="stat-item">
-                                <div class="stat-number">5+</div>
+                                <div class="stat-number">6+</div>
                                 <div class="stat-label">Tahun</div>
                             </div>
                             <div class="stat-item">
@@ -1075,12 +1294,20 @@
                         <div class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #f43f5e;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Kandidat Doktor (S3), Teknik Elektro dan Informatika</div>
+                                    <div class="timeline-subtitle">Institut Teknologi Bandung (ITB) 2025-Sekarang</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
                                     <div class="timeline-dot" style="background: #6366f1;"></div>
                                 </div>
                                 <div>
-                                    <div class="timeline-title">Magister Teknik Elektro</div>
+                                    <div class="timeline-title">Magister Teknik (M.T.), Teknik Elektro</div>
                                     <div class="timeline-subtitle">Institut Teknologi Bandung (ITB) 2021-2023</div>
-                                    <!-- <div class="timeline-date">Spesialisasi: Teknologi Informasi</div> -->
                                 </div>
                             </div>
                             <div class="timeline-item">
@@ -1088,9 +1315,8 @@
                                     <div class="timeline-dot" style="background: #8b5cf6;"></div>
                                 </div>
                                 <div>
-                                    <div class="timeline-title">Sarjana Sistem Informasi</div>
+                                    <div class="timeline-title">Sarjana Komputer (S.Kom.), Sistem Informasi</div>
                                     <div class="timeline-subtitle">Universitas Bandar Lampung (UBL) 2015-2019</div>
-                                    <!-- <div class="timeline-date">IPK: 3.8/4.0</div> -->
                                 </div>
                             </div>
                         </div>
@@ -1108,7 +1334,7 @@
                                     <div class="timeline-dot" style="background: #a855f7;"></div>
                                 </div>
                                 <div>
-                                    <div class="timeline-title">Machine Learning Developer</div>
+                                    <div class="timeline-title">Machine Learning Engineer</div>
                                     <div class="timeline-subtitle">BPH Migas</div>
                                     <div class="timeline-date">2026 - Sekarang</div>
                                 </div>
@@ -1130,7 +1356,47 @@
                                 <div>
                                     <div class="timeline-title">Lead Software Developer</div>
                                     <div class="timeline-subtitle">PT. LSKK</div>
-                                    <div class="timeline-date">2021 - 2025</div>
+                                    <div class="timeline-date">2024 - 2025</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #6366f1;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Full Stack Developer</div>
+                                    <div class="timeline-subtitle">PT. LSKK</div>
+                                    <div class="timeline-date">2022 - 2024</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #06b6d4;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Mobile Developer</div>
+                                    <div class="timeline-subtitle">PPTIK-ITB</div>
+                                    <div class="timeline-date">2021 - 2022</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #f97316;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">Database Engineer</div>
+                                    <div class="timeline-subtitle">PT Digital Tani</div>
+                                    <div class="timeline-date">2020 - 2021</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot-wrapper">
+                                    <div class="timeline-dot" style="background: #22c55e;"></div>
+                                </div>
+                                <div>
+                                    <div class="timeline-title">IoT Developer</div>
+                                    <div class="timeline-subtitle">Lab IoT, Universitas Bandar Lampung</div>
+                                    <div class="timeline-date">2019 - 2020</div>
                                 </div>
                             </div>
                             
@@ -1151,6 +1417,49 @@
 
                 <div class="skills-grid">
                     <div class="skill-card reveal">
+                        <div class="skill-icon-box" style="background: rgba(244,63,94,0.1); color: #f43f5e;">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="skill-name">AI / ML</div>
+                        <div class="skill-desc">Machine Learning & Computer Vision</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">YOLOv8</span>
+                            <span class="tech-tag">OpenCV</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal reveal-delay-1">
+                        <div class="skill-icon-box" style="background: rgba(99,102,241,0.1); color: #6366f1;">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="skill-name">System Analyst</div>
+                        <div class="skill-desc">Analisis & Perancangan Sistem</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Kebutuhan Bisnis</span>
+                            <span class="tech-tag">Proses Bisnis</span>
+                            <span class="tech-tag">Spesifikasi Teknis</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal reveal-delay-2">
+                        <div class="skill-icon-box" style="background: rgba(34,197,94,0.1); color: #22c55e;">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="skill-name">Backend & API</div>
+                        <div class="skill-desc">Server-side Development</div>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">NestJS</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">API Design</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal reveal-delay-3">
                         <div class="skill-icon-box" style="background: rgba(6,182,212,0.1); color: #06b6d4;">
                             <i class="fas fa-microchip"></i>
                         </div>
@@ -1158,54 +1467,42 @@
                         <div class="skill-desc">Internet of Things Development</div>
                         <div class="tech-tags">
                             <span class="tech-tag">Arduino</span>
+                            <span class="tech-tag">ESP32</span>
                             <span class="tech-tag">MQTT</span>
                             <span class="tech-tag">Sensors</span>
-                            <span class="tech-tag">ESP32</span>
+                            <span class="tech-tag">Cloud Integration</span>
                         </div>
                     </div>
 
-                    <div class="skill-card reveal reveal-delay-1">
-                        <div class="skill-icon-box" style="background: rgba(34,197,94,0.1); color: #22c55e;">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <div class="skill-name">Backend</div>
-                        <div class="skill-desc">Server-side Development</div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Node.js</span>
-                            <span class="tech-tag">NestJS</span>
-                            <span class="tech-tag">Express</span>
-                            <span class="tech-tag">Python</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card reveal reveal-delay-2">
-                        <div class="skill-icon-box" style="background: rgba(99,102,241,0.1); color: #6366f1;">
+                    <div class="skill-card reveal">
+                        <div class="skill-icon-box" style="background: rgba(168,85,247,0.1); color: #a855f7;">
                             <i class="fas fa-code"></i>
                         </div>
                         <div class="skill-name">Web Dev</div>
                         <div class="skill-desc">Modern Web Applications</div>
                         <div class="tech-tags">
-                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">HTML/CSS/JS</span>
+                            <span class="tech-tag">React</span>
                             <span class="tech-tag">Vue.js</span>
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">Tailwind</span>
+                            <span class="tech-tag">Quasar</span>
                         </div>
                     </div>
 
-                    <div class="skill-card reveal reveal-delay-3">
-                        <div class="skill-icon-box" style="background: rgba(168,85,247,0.1); color: #a855f7;">
+                    <div class="skill-card reveal reveal-delay-1">
+                        <div class="skill-icon-box" style="background: rgba(236,72,153,0.1); color: #ec4899;">
                             <i class="fas fa-mobile-alt"></i>
                         </div>
                         <div class="skill-name">Mobile Dev</div>
                         <div class="skill-desc">Cross-platform Apps</div>
                         <div class="tech-tags">
+                            <span class="tech-tag">Android</span>
                             <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Expo</span>
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">Java</span>
                         </div>
                     </div>
 
-                    <div class="skill-card reveal">
+                    <div class="skill-card reveal reveal-delay-2">
                         <div class="skill-icon-box" style="background: rgba(249,115,22,0.1); color: #f97316;">
                             <i class="fas fa-database"></i>
                         </div>
@@ -1219,45 +1516,17 @@
                         </div>
                     </div>
 
-                    <div class="skill-card reveal reveal-delay-1">
+                    <div class="skill-card reveal reveal-delay-3">
                         <div class="skill-icon-box" style="background: rgba(59,130,246,0.1); color: #3b82f6;">
                             <i class="fas fa-cloud"></i>
                         </div>
                         <div class="skill-name">DevOps</div>
-                        <div class="skill-desc">Cloud & Infrastructure</div>
+                        <div class="skill-desc">Deployment & Server Admin</div>
                         <div class="tech-tags">
+                            <span class="tech-tag">Linux Server</span>
                             <span class="tech-tag">Docker</span>
                             <span class="tech-tag">Git</span>
                             <span class="tech-tag">CI/CD</span>
-                            <span class="tech-tag">AWS</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card reveal reveal-delay-2">
-                        <div class="skill-icon-box" style="background: rgba(236,72,153,0.1); color: #ec4899;">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <div class="skill-name">Design & UI</div>
-                        <div class="skill-desc">User Interface Design</div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Figma</span>
-                            <span class="tech-tag">Tailwind</span>
-                            <span class="tech-tag">Bootstrap</span>
-                            <span class="tech-tag">Material UI</span>
-                        </div>
-                    </div>
-
-                    <div class="skill-card reveal reveal-delay-3">
-                        <div class="skill-icon-box" style="background: rgba(244,63,94,0.1); color: #f43f5e;">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="skill-name">AI / ML</div>
-                        <div class="skill-desc">Artificial Intelligence</div>
-                        <div class="tech-tags">
-                            <span class="tech-tag">TensorFlow</span>
-                            <span class="tech-tag">YOLOv8</span>
-                            <span class="tech-tag">OpenCV</span>
-                            <span class="tech-tag">Python</span>
                         </div>
                     </div>
                 </div>
@@ -1312,7 +1581,7 @@
                         </div>
                         <div class="contact-title">WhatsApp</div>
                         <div class="contact-subtitle">Chat langsung via WA</div>
-                        <a href="https://wa.me/6281234567890" target="_blank" class="contact-link" style="color:#22c55e;">+62 812-3456-7890</a>
+                        <a href="https://wa.me/6282283198216" target="_blank" class="contact-link" style="color:#22c55e;">+62 822 8319 8216</a>
                     </div>
 
                     <div class="contact-card reveal reveal-delay-2">
@@ -1320,8 +1589,8 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-title">Lokasi</div>
-                        <div class="contact-subtitle">Bandung, Indonesia</div>
-                        <span class="contact-link" style="cursor:default;">Available for Remote</span>
+                        <div class="contact-subtitle">Jl. Pelajar Pejuang 45 No. 65, Kota Bandung, Jawa Barat 40264</div>
+                        <span class="contact-link" style="cursor:default;">Available for Remote & On-site</span>
                     </div>
                 </div>
 
@@ -1346,7 +1615,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-logo">Asep Trisna S.</div>
+            <div class="footer-logo">Asep Trisna Setiawan, S.Kom., M.T.</div>
             <div class="footer-copy">&copy; <span id="currentYear"></span> All rights reserved.</div>
             <div class="footer-links">
                 <a href="#about">Tentang</a>
@@ -1452,7 +1721,7 @@
         });
 
         // === Typewriter ===
-        const words = ['Software Engineer', 'Full Stack Developer', 'IoT Specialist', 'ML Developer', 'Educator'];
+        const words = ['Machine Learning Engineer', 'Lead Software Developer', 'Backend Developer', 'IoT Specialist', 'Dosen & Peneliti'];
         let wordIndex = 0, charIndex = 0, isDeleting = false;
         const typewriterEl = document.getElementById('typewriter');
         function typeWrite() {
@@ -1496,24 +1765,25 @@
 
         // === Projects ===
         const projectsData = [
-            { imageUrl: "images/angkot-bandung.jpg", title: "Angkot Bandung: Pantau Posisi Angkot", description: "Aplikasi web untuk memantau posisi angkot di Kota Bandung secara real-time berdasarkan pilihan trayek.", category: "iot" },
-            { imageUrl: "images/gayo.png", title: "Drilling Monitoring", description: "Monitoring Laporan Drilling untuk PT. Gayo Mineral Resources.", category: "web" },
-            { imageUrl: "images/job-management.png", title: "Job Management", description: "Monitoring Laporan Pekerjaan untuk PT. Antam dan Logam Mulia.", category: "web" },
-            { imageUrl: "images/iot-monitoring.png", title: "IoT Monitoring", description: "Monitoring Mesin Produksi untuk PT. Antam ubpp Logam Mulia.", category: "iot" },
+            { imageUrl: "images/ai-hylab.jpg", title: "HYLAB: Smart Classroom AI Monitoring", description: "Dasbor AI terpusat untuk menganalisis aktivitas, jumlah, dan kondisi emosional siswa di kelas secara real-time dari berbagai sudut kamera.", category: "ai" },
+            { imageUrl: "images/ops-engine.png", title: "Ops Engine: Monitoring Mesin Industri", description: "Solusi manajemen operasional dengan dasbor web dan aplikasi mobile untuk pelacakan status mesin, manajemen tugas, dan pelaporan inspeksi.", category: "mobile" },
+            { imageUrl: "images/ai-camera.jpg", title: "Deteksi Kendaraan dengan Kamera AI", description: "Platform AI (YOLOv8) untuk mendeteksi dan menganalisis objek kendaraan secara real-time dari rekaman kamera.", category: "ai" },
+            { imageUrl: "images/angkot-bandung.jpg", title: "Pemantauan Real-time Angkot & Ambulans Bandung", description: "Aplikasi berbasis web untuk memantau posisi angkot dan semua unit ambulans di Kota Bandung secara langsung di peta.", category: "iot" },
+            { imageUrl: "images/iot-monitoring.png", title: "IoT Monitoring PT. Antam", description: "Sistem monitoring IoT untuk melacak dan memantau mesin produksi di unit bisnis pengolahan logam mulia PT. Antam.", category: "iot" },
+            { imageUrl: "images/gayo.png", title: "Monitoring Drilling PT. Gayo Mineral Resource", description: "Sistem monitoring digital untuk mengelola dan memantau seluruh laporan aktivitas pengeboran bagi PT. Gayo Mineral Resources.", category: "web" },
+            { imageUrl: "images/ai-traffic-monitoring.jpg", title: "Pemantauan Lalu Lintas dengan AI", description: "Sistem pemantauan lalu lintas menggunakan AI untuk mendeteksi dan menganalisis kondisi lalu lintas secara real-time dari rekaman kamera.", category: "ai" },
+            { imageUrl: "images/gps-tracker.jpg", title: "Platform Monitoring Armada Kendaraan", description: "Aplikasi web untuk melacak dan memvisualisasikan lokasi kendaraan secara real-time pada peta interaktif.", category: "iot" },
+            { imageUrl: "images/status-iot.jpg", title: "Dasbor Status Perangkat IoT", description: "Dasbor berbasis web untuk memantau status dan lokasi perangkat IoT di seluruh Indonesia melalui visualisasi peta interaktif.", category: "iot" },
+            { imageUrl: "images/bell-iot.png", title: "Sistem Notifikasi Bel & Monitoring CCTV", description: "Integrasi bel pintu dengan kamera CCTV yang otomatis mengirimkan notifikasi dan tangkapan gambar ke perangkat mobile dan web.", category: "iot" },
+            { imageUrl: "images/face-detection.jpg", title: "Visi Komputer: Deteksi Manusia & Emosi", description: "Sistem AI canggih yang mendeteksi keberadaan orang dan menganalisis ekspresi emosi mereka secara real-time.", category: "ai" },
+            { imageUrl: "images/face-recognition-dashboard.jpg", title: "Dashboard Pengenalan Wajah", description: "Aplikasi web interaktif untuk melatih dan menguji model AI dalam melakukan pengenalan wajah secara real-time dari kamera.", category: "ai" },
+            { imageUrl: "images/kawal-desa.png", title: "Kawal Desa", description: "Platform tata kelola desa serta interaksi antara warga dan aparat desa.", category: "web" },
+            { imageUrl: "images/haji.png", title: "Manasik Tracking", description: "Platform pelacakan jamaah haji dengan GPS real-time, wearable/mobile app, dan dasbor pemantauan terpusat untuk panitia.", category: "mobile" },
+            { imageUrl: "images/georima.png", title: "GeoRIMA 1.5", description: "Platform visualisasi data geospasial canggih untuk PPSDM dengan peta interaktif menampilkan data geologi, mineral, dan kehutanan.", category: "web" },
             { imageUrl: "images/ambulance-bandung.jpg", title: "Ambulans Kota Bandung", description: "Aplikasi berbasis web untuk memantau dan melacak posisi semua unit ambulans di Kota Bandung secara live pada peta.", category: "iot" },
             { imageUrl: "images/apotek.png", title: "Inventory Apotek", description: "Sistem Informasi Pencatatan dan Penjualan Obat untuk Apotek.", category: "web" },
-            { imageUrl: "images/haji.png", title: "Manasik Tracking", description: "Sistem Informasi Tracking Jamaah Haji untuk PT. LSKK.", category: "mobile" },
-            { imageUrl: "images/georima.png", title: "GeoRIMA 1.5", description: "Visualisasi Data Sumber Daya Alam untuk PPSDM.", category: "web" },
-            { imageUrl: "images/kawal-desa.png", title: "Kawal Desa", description: "Platform tatakelola desa serta interaksi antara warga dan aparat desa.", category: "web" },
-            { imageUrl: "images/ai-camera.jpg", title: "Deteksi Kendaraan dengan Kamera AI", description: "Platform AI (YOLOv8) untuk mendeteksi dan menganalisis objek kendaraan secara real-time dari rekaman kamera.", category: "ai" },
-            { imageUrl: "images/face-recognition-dashboard.jpg", title: "Dashboard Pengenalan Wajah", description: "Aplikasi web interaktif untuk melatih dan menguji model AI dalam melakukan pengenalan wajah secara real-time.", category: "ai" },
-            { imageUrl: "images/ai-hylab.jpg", title: "HYLAB: Smart Classroom AI", description: "Dasbor pemantauan terpusat menggunakan AI untuk menganalisis aktivitas dan kondisi emosional siswa di kelas.", category: "ai" },
-            { imageUrl: "images/face-detection.jpg", title: "Deteksi Manusia dan Emosi", description: "Sistem AI yang mendeteksi keberadaan orang dan menganalisis ekspresi emosi mereka secara real-time.", category: "ai" },
-            { imageUrl: "images/ops-engine.png", title: "Ops Engine: Monitoring Mesin Industri", description: "Solusi manajemen operasional dengan dasbor web dan aplikasi mobile untuk pelacakan status mesin dan pelaporan inspeksi.", category: "mobile" },
-            { imageUrl: "images/status-iot.jpg", title: "Dasbor Status Perangkat IoT", description: "Dasbor untuk memantau status dan lokasi perangkat IoT di seluruh Indonesia melalui visualisasi peta interaktif.", category: "iot" },
-            { imageUrl: "images/bell-iot.png", title: "Sistem Notifikasi Bel & CCTV", description: "Integrasi bel pintu dengan kamera CCTV yang mengirimkan notifikasi dan tangkapan gambar secara otomatis.", category: "iot" },
-            { imageUrl: "images/gps-tracker.jpg", title: "Platform Monitoring Armada", description: "Aplikasi web untuk melacak dan memvisualisasikan lokasi kendaraan secara real-time pada peta interaktif.", category: "iot" },
-            { imageUrl: "images/ai-traffic-monitoring.jpg", title: "Pemantauan Lalu Lintas AI", description: "Sistem pemantauan lalu lintas menggunakan AI untuk menganalisis kondisi lalu lintas secara real-time.", category: "ai" }
+            { imageUrl: "images/job-management.png", title: "Job Management PT. Antam", description: "Monitoring Laporan Pekerjaan untuk PT. Antam dan Logam Mulia.", category: "web" },
+            { imageUrl: "images/bph-migas-api.jpg", title: "Sistem API Monitoring Kegiatan – BPH Migas", description: "RESTful API menggunakan FastAPI untuk sistem monitoring kegiatan di BPH Migas, mengelola dan menyediakan integrasi data kegiatan secara terpusat.", category: "web" }
         ];
 
         const projectsGrid = document.getElementById('projectsGrid');
@@ -1560,6 +1830,121 @@
             });
         });
     });
+
+    // === Hero Particles Canvas ===
+    (function() {
+        const canvas = document.getElementById('heroParticles');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const particleCount = 60;
+
+        function resize() {
+            const hero = document.getElementById('hero');
+            canvas.width = hero.offsetWidth;
+            canvas.height = hero.offsetHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        class Particle {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.opacity = Math.random() * 0.5 + 0.1;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                const isDark = document.documentElement.classList.contains('dark');
+                ctx.fillStyle = isDark
+                    ? `rgba(99, 102, 241, ${this.opacity})`
+                    : `rgba(99, 102, 241, ${this.opacity * 0.6})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+
+        function connectParticles() {
+            const maxDist = 120;
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a + 1; b < particles.length; b++) {
+                    const dx = particles[a].x - particles[b].x;
+                    const dy = particles[a].y - particles[b].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < maxDist) {
+                        const isDark = document.documentElement.classList.contains('dark');
+                        ctx.strokeStyle = isDark
+                            ? `rgba(99, 102, 241, ${0.08 * (1 - dist / maxDist)})`
+                            : `rgba(99, 102, 241, ${0.05 * (1 - dist / maxDist)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+        animate();
+    })();
+
+    // === Animated Stats Counter ===
+    (function() {
+        const statNumbers = document.querySelectorAll('.stat-number');
+        let counted = false;
+
+        function animateCounter(el) {
+            const text = el.textContent.trim();
+            const match = text.match(/^(\d+)(.*)$/);
+            if (!match) return;
+            const target = parseInt(match[1]);
+            const suffix = match[2];
+            const duration = 2000;
+            const start = performance.now();
+            el.classList.add('counting');
+
+            function step(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(target * eased) + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+                else el.classList.remove('counting');
+            }
+            requestAnimationFrame(step);
+        }
+
+        function checkStats() {
+            if (counted) return;
+            const statsSection = document.querySelector('.stat-grid');
+            if (!statsSection) return;
+            const rect = statsSection.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 50) {
+                counted = true;
+                statNumbers.forEach(el => animateCounter(el));
+            }
+        }
+        window.addEventListener('scroll', checkStats);
+        checkStats();
+    })();
     </script>
 
 </body>
